@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DenteBello | Implantes e Estética Dental em Palmas–TO</title>
+<meta name="description" content="Implantes dentários e estética oral em Palmas–TO desde 1992. Agende sua avaliação na DenteBello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{background:#F2F4F3}
+:root{
+  --porcelain:#F2F4F3;
+  --enamel:#E6EAE8;
+  --ink:#0F1C2B;
+  --ink-soft:#4A5868;
+  --deep:#0A1522;
+  --deep-2:#122233;
+  --cobalt:#1D4ED8;
+  --cobalt-light:#9DB8FF;
+  --silver:#C5CDD4;
+  --display:"Newsreader",Georgia,serif;
+  --text:"Hanken Grotesk",system-ui,sans-serif;
+  --gutter:clamp(20px,4vw,64px);
+  --section:clamp(88px,12vw,180px);
+  --ease:cubic-bezier(.22,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--text);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--cobalt);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.dark :focus-visible{outline-color:var(--cobalt-light)}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.015em;text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{padding-inline:var(--gutter);max-width:1440px;margin-inline:auto}
+
+/* ---------- botão ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6em;font:500 15px/1 var(--text);letter-spacing:.01em;text-decoration:none;padding:17px 26px;border-radius:999px;background:var(--cobalt);color:#fff;border:0;cursor:pointer;transition:transform .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease)}
+.btn:hover{background:#1A43BE;transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(29,78,216,.55)}
+.btn svg{width:18px;height:18px}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(15,28,43,.22)}
+.btn--ghost:hover{background:rgba(15,28,43,.05);box-shadow:inset 0 0 0 1px rgba(15,28,43,.4)}
+.dark .btn--ghost{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);transition:background .5s var(--ease),padding .5s var(--ease),box-shadow .5s var(--ease)}
+.nav.is-solid{background:rgba(242,244,243,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:12px;box-shadow:0 1px 0 rgba(15,28,43,.08)}
+.nav__logo img{height:44px;width:auto}
+.nav__links{display:flex;gap:34px;list-style:none}
+.nav__links a{font-size:14px;text-decoration:none;color:var(--ink-soft);transition:color .3s}
+.nav__links a:hover{color:var(--ink)}
+.nav .btn{padding:13px 22px;font-size:14px}
+@media (max-width:900px){.nav__links{display:none}.nav__logo img{height:36px}.nav .btn{padding:11px 18px}}
+
+/* ---------- hero: moldura que se abre ---------- */
+.hero{position:relative;height:200vh}
+.hero__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center}
+.hero__frame{position:absolute;left:var(--fl,42%);top:var(--ft,40%);width:var(--fw,54%);height:var(--fh,54%);border-radius:var(--fr,28px);overflow:hidden;will-change:width,height,left,top}
+.hero__img{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;object-position:center 35%;transform:scale(var(--zs,1.12));will-change:transform}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,21,34,0) 35%,rgba(10,21,34,.78) 100%);opacity:var(--so,0)}
+.hero__title{position:absolute;left:var(--gutter);right:var(--gutter);top:calc(50% - 38vh);z-index:3;pointer-events:none}
+.hero__title h1{font-size:clamp(46px,8.4vw,138px);line-height:.94;color:var(--ink);transform:translateY(var(--ty,0));opacity:var(--to,1)}
+.hero__title h1 span{display:block}
+.hero__title h1 .r{text-align:right;font-style:italic}
+.hero__end{position:absolute;left:var(--gutter);bottom:clamp(36px,7vh,80px);z-index:4;max-width:560px;color:#fff;opacity:var(--eo,0);transform:translateY(var(--ey,24px))}
+.hero__end h2{font-size:clamp(34px,4.6vw,68px);line-height:1;margin-bottom:18px}
+.hero__end p{font-size:clamp(16px,1.3vw,19px);color:rgba(255,255,255,.82);margin-bottom:28px;max-width:440px}
+.hero__meta{position:absolute;right:var(--gutter);bottom:clamp(36px,7vh,80px);z-index:4;color:rgba(255,255,255,.88);font-size:14px;text-align:right;opacity:var(--eo,0)}
+.hero__lede{position:absolute;left:var(--gutter);bottom:clamp(28px,6vh,64px);z-index:3;max-width:330px;font-size:15px;color:var(--ink-soft);opacity:var(--to,1)}
+@media (max-width:760px){
+  .hero__title{top:96px}
+  .hero__title h1 .r{text-align:left}
+  .hero__lede{display:none}
+  .hero__meta{display:none}
+  .hero__img{inset:0;width:100%;height:100%;object-position:24% 28%;transform:none}
+  .hero__stage::before{content:"";position:absolute;inset:0;background:var(--deep);opacity:var(--bgo,0)}
+  .hero__shade{background:linear-gradient(180deg,rgba(10,21,34,0) 60%,rgba(10,21,34,.9) 100%)}
+}
+
+/* ---------- história ---------- */
+.story{padding-block:var(--section)}
+.story__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,7vw,120px);align-items:center}
+.story__year{font-family:var(--display);font-weight:500;font-size:clamp(96px,17vw,260px);line-height:.8;letter-spacing:-.05em;color:var(--ink);font-variant-numeric:lining-nums}
+.story__year small{display:block;font-family:var(--text);font-size:15px;letter-spacing:0;color:var(--ink-soft);margin-top:22px;line-height:1.5;max-width:300px}
+.story h2{font-size:clamp(34px,3.8vw,56px);line-height:1.04;margin-bottom:28px}
+.story p{color:var(--ink-soft);max-width:60ch;margin-bottom:1.1em;font-size:18px}
+.story__photo{margin-top:clamp(64px,9vw,140px);border-radius:24px;overflow:hidden;aspect-ratio:16/9;clip-path:inset(var(--ci,18%) var(--ci,18%) var(--ci,18%) var(--ci,18%) round 24px)}
+.story__photo img{width:100%;height:108%;max-width:none;object-fit:cover;object-position:center 40%;transform:translateY(var(--py,-4%))}
+@media (max-width:860px){.story__grid{grid-template-columns:1fr}}
+
+/* ---------- implante 3D (pico) ---------- */
+.dark{background:var(--deep);color:#EEF2F6}
+.implant{position:relative;height:420vh}
+.implant__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-columns:57fr 43fr;align-items:center}
+#implant-canvas{position:absolute;inset:0;width:100%;height:100%}
+.implant__intro{position:absolute;top:clamp(96px,13vh,140px);left:57%;max-width:560px;z-index:2;padding-right:var(--gutter)}
+@media (max-width:860px){.implant__intro{left:var(--gutter);top:88px}}
+.implant__intro h2{font-size:clamp(30px,3vw,46px);line-height:1.05}
+.implant__steps{grid-column:2;position:relative;z-index:2;padding-right:var(--gutter);height:260px;margin-top:24vh}
+.step{position:absolute;inset:0 var(--gutter) auto 0;max-width:430px;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.step.is-on{opacity:1;transform:none}
+.step__n{font-family:var(--display);font-style:italic;font-size:22px;color:var(--cobalt-light);margin-bottom:10px}
+.step h3{font-size:clamp(28px,2.8vw,42px);line-height:1.05;margin-bottom:14px}
+.step p{color:rgba(238,242,246,.86);font-size:17px}
+.implant__bar{position:absolute;left:var(--gutter);bottom:clamp(32px,6vh,64px);width:min(320px,40vw);height:1px;background:rgba(255,255,255,.16);z-index:2}
+.implant__bar i{position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--ip,0));background:var(--cobalt-light)}
+.implant__fallback{display:none}
+@media (max-width:860px){
+  .implant__stage{grid-template-columns:1fr;align-items:end}
+  .implant__steps{grid-column:1;padding:0 var(--gutter);height:230px;margin:0 0 9vh}
+  .step{inset:0 var(--gutter) auto var(--gutter)}
+  .implant__bar{display:none}
+}
+
+/* ---------- por que ---------- */
+.why{padding-block:var(--section)}
+.why__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(56px,7vw,100px)}
+.why__head h2{font-size:clamp(36px,4.4vw,66px);line-height:1}
+.why__head p{color:var(--ink-soft);max-width:46ch;font-size:18px;justify-self:end}
+.why__body{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
+.why__img{border-radius:24px;overflow:hidden;position:sticky;top:110px;aspect-ratio:4/5}
+.why__img img{width:100%;height:100%;object-fit:cover;object-position:19% 50%}
+.why__list{list-style:none}
+.why__list li{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:34px 0;border-top:1px solid rgba(15,28,43,.12)}
+.why__list li:last-child{border-bottom:1px solid rgba(15,28,43,.12)}
+.why__list svg{width:30px;height:30px;stroke:var(--cobalt);fill:none;stroke-width:1.4;margin-top:6px}
+.why__list h3{font-size:clamp(24px,2.2vw,32px);line-height:1.1;margin-bottom:8px}
+.why__list p{color:var(--ink-soft);max-width:52ch}
+@media (max-width:860px){.why__head,.why__body{grid-template-columns:1fr}.why__head p{justify-self:start}.why__img{position:relative;top:0;aspect-ratio:16/10}}
+
+/* ---------- especialidades ---------- */
+.spec{padding-block:var(--section);background:var(--enamel)}
+.spec__grid{display:grid;grid-template-columns:4fr 8fr;gap:clamp(40px,6vw,100px)}
+.spec__side{position:sticky;top:120px;align-self:start}
+.spec__side h2{font-size:clamp(36px,4vw,60px);line-height:1;margin-bottom:22px}
+.spec__side p{color:var(--ink-soft);margin-bottom:32px;max-width:40ch}
+.spec__list{list-style:none;columns:2;column-gap:clamp(24px,4vw,64px)}
+.spec__list li{break-inside:avoid;font-family:var(--display);font-weight:500;font-size:clamp(24px,2.3vw,34px);line-height:1.1;padding:20px 0;border-bottom:1px solid rgba(15,28,43,.14);display:flex;justify-content:space-between;align-items:baseline;gap:12px;transition:color .3s,padding .4s var(--ease)}
+.spec__list li:hover{color:var(--cobalt);padding-left:10px}
+.spec__list li.is-main{font-style:italic}
+@media (max-width:860px){.spec__grid{grid-template-columns:1fr}.spec__side{position:relative;top:0}.spec__list{columns:1}}
+
+/* ---------- resultados (galeria horizontal) ---------- */
+.results{position:relative;height:300vh}
+.results__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.results__head{padding-inline:var(--gutter);display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:clamp(28px,4vh,48px)}
+.results__head h2{font-size:clamp(34px,4.2vw,64px);line-height:1;max-width:12ch}
+.results__head p{color:rgba(238,242,246,.86);max-width:38ch}
+.results__track{display:flex;gap:clamp(16px,2vw,28px);padding-inline:var(--gutter);will-change:transform;transform:translateX(var(--hx,0))}
+.shot{flex:0 0 auto;width:clamp(260px,30vw,460px);margin:0}
+.shot__img{aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--deep-2)}
+.shot__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.shot:hover img{transform:scale(1.04)}
+.shot figcaption{font-size:14px;color:rgba(238,242,246,.82);margin-top:14px;max-width:34ch}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:clamp(64px,8vw,120px) var(--gutter) var(--section)}
+.stat{border-top:1px solid rgba(255,255,255,.18);padding-top:22px}
+.stat b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(48px,6vw,96px);line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+.stat span{color:rgba(238,242,246,.82);font-size:15px}
+@media (max-width:760px){.results__head{flex-direction:column;align-items:start}.stats{grid-template-columns:1fr}}
+
+/* ---------- equipe ---------- */
+.team{padding-block:var(--section)}
+.team h2{font-size:clamp(36px,4.4vw,66px);line-height:1;margin-bottom:clamp(48px,6vw,90px);max-width:14ch}
+.team__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
+.doc:nth-child(2){margin-top:clamp(0px,10vw,160px)}
+.doc__img{border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--enamel)}
+.doc__img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.doc h3{font-size:clamp(28px,2.6vw,40px);margin-top:24px;line-height:1.1}
+.doc p{color:var(--ink-soft)}
+.doc .tag{font-size:14px;color:var(--ink-soft);margin-top:6px}
+@media (max-width:700px){.team__grid{grid-template-columns:1fr}.doc:nth-child(2){margin-top:0}}
+
+/* ---------- depoimentos ---------- */
+.voices{padding-block:var(--section);background:var(--enamel)}
+.voices__list{display:grid;gap:clamp(72px,9vw,140px)}
+.quote{max-width:1000px}
+.quote:nth-child(2){margin-left:auto}
+.quote blockquote{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.2vw,34px);line-height:1.4;letter-spacing:-.005em;color:var(--ink);text-wrap:pretty}
+.quote blockquote::before{content:"“";display:block;font-size:2.4em;line-height:.6;color:var(--cobalt);margin-bottom:.15em}
+.quote figcaption{margin-top:28px;font-size:15px;color:var(--ink-soft)}
+.quote figcaption b{display:block;color:var(--ink);font-weight:500;font-size:16px}
+
+/* ---------- contato ---------- */
+.contact{padding-block:var(--section) clamp(48px,6vw,80px)}
+.contact__grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(48px,7vw,120px)}
+.contact h2{font-size:clamp(40px,5.4vw,84px);line-height:.98;margin-bottom:28px}
+.contact__lede{color:rgba(238,242,246,.86);max-width:40ch;margin-bottom:48px;font-size:18px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.info h3{font-family:var(--text);font-size:14px;font-weight:500;color:var(--cobalt-light);margin-bottom:6px;letter-spacing:.01em}
+.info p,.info a{color:rgba(238,242,246,.88);text-decoration:none;font-size:16px}
+.info a:hover{color:#fff;text-decoration:underline}
+.form{background:var(--deep-2);border-radius:28px;padding:clamp(28px,3.4vw,48px)}
+.form h3{font-size:clamp(26px,2.4vw,36px);margin-bottom:6px}
+.form>p{color:rgba(238,242,246,.82);margin-bottom:28px;font-size:15px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:14px;color:rgba(238,242,246,.8);margin-bottom:8px}
+.field input,.field select,.field textarea{width:100%;font:400 16px/1.4 var(--text);color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:15px 16px;transition:border-color .3s,background .3s;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23C5CDD4' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.field select option{color:#0F1C2B}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cobalt-light);background:rgba(255,255,255,.08)}
+.form .btn{width:100%;justify-content:center;margin-top:8px}
+.form small{display:block;margin-top:14px;color:rgba(238,242,246,.7);font-size:13px}
+.footer{margin-top:clamp(80px,10vw,140px);padding-top:32px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;color:rgba(238,242,246,.72)}
+.footer img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.footer a{text-decoration:none}
+.footer a:hover{color:#fff}
+@media (max-width:900px){.contact__grid{grid-template-columns:1fr}.info{grid-template-columns:1fr}}
+
+
+/* ---------- mapa ---------- */
+.map{position:relative;margin-top:clamp(56px,7vw,96px);border-radius:28px;overflow:hidden;height:clamp(320px,38vw,460px);background:#0F1F31}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.15) contrast(1.05)}
+.map__ph{position:absolute;inset:0;display:block;color:inherit;text-decoration:none}
+.map__ph svg{position:absolute;inset:0;width:100%;height:100%}
+.map__card{position:absolute;left:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);max-width:420px;background:rgba(242,244,243,.97);color:var(--ink);border-radius:20px;padding:22px 24px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5)}
+.map__card h3{font-size:24px;margin-bottom:6px}
+.map__card p{color:var(--ink-soft);font-size:15px;margin-bottom:16px}
+.map__card .row{display:flex;gap:10px;flex-wrap:wrap}
+.map__card .btn{padding:13px 20px;font-size:14px}
+.dark .map__card .btn--ghost{color:var(--ink);box-shadow:inset 0 0 0 1px rgba(15,28,43,.25)}
+@media (max-width:700px){.map{height:auto;overflow:visible;background:none}.map iframe,.map__ph{position:relative;display:block;height:240px;border-radius:24px;overflow:hidden}.map__card{position:relative;inset:auto;margin-top:12px;max-width:none}}
+
+/* ---------- whatsapp flutuante ---------- */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4);transform:scale(0);transition:transform .5s var(--ease)}
+.wa.is-on{transform:scale(1)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* ---------- revelações ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero{height:auto}
+  .hero__stage{position:relative;height:auto;min-height:100vh}
+  .implant{height:auto}
+  .implant__stage{position:relative;height:auto;display:block;padding:var(--section) 0}
+  #implant-canvas{display:none}
+  .implant__intro{position:relative;top:0;margin-bottom:48px}
+  .implant__steps{height:auto;padding:0 var(--gutter);display:grid;gap:40px}
+  .step{position:relative;inset:auto;opacity:1;transform:none}
+  .implant__bar{display:none}
+  .results{height:auto}
+  .results__stage{position:relative;height:auto;padding-block:var(--section) 0}
+  .results__track{overflow-x:auto;transform:none!important;padding-bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#inicio" aria-label="DenteBello, início"><img src="images/logo.png" alt="DenteBello Odontologia Premium" width="132" height="44"></a>
+  <ul class="nav__links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a class="btn" href="#contato">Agendar avaliação</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio" aria-label="Apresentação">
+  <div class="hero__stage">
+    <div class="hero__title">
+      <h1><span>Volte a sorrir</span><span class="r">com confiança</span></h1>
+    </div>
+    <p class="hero__lede">Implantes e estética dental para você recuperar a segurança de sorrir, há mais de 30 anos cuidando de Palmas.</p>
+    <div class="hero__frame" id="heroFrame">
+      <img class="hero__img" src="images/hero.jpg" alt="Recepção da clínica DenteBello em Palmas–TO" width="1600" height="1000">
+      <div class="hero__shade"></div>
+    </div>
+    <div class="hero__end">
+      <h2>Implante e estética oral em Palmas</h2>
+      <p>Implantes e estética dental para você recuperar a segurança de sorrir, há mais de 30 anos cuidando de Palmas.</p>
+      <a class="btn" href="#contato">Agendar avaliação</a>
+    </div>
+    <p class="hero__meta">Qd 104 Norte, Palmas–TO<br>Segunda a sexta, 8h às 18h</p>
+  </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="story wrap" id="sobre">
+  <div class="story__grid">
+    <div class="story__year rv" aria-hidden="true"><span id="year">1992</span><small>Um dos primeiros consultórios odontológicos de Palmas.</small></div>
+    <div>
+      <h2 class="rv">Tradição e excelência desde 1992</h2>
+      <p class="rv">A DenteBello nasceu em 1992 como um dos primeiros consultórios odontológicos de Palmas e cresceu junto com a cidade. São mais de 30 anos dedicados a devolver função, saúde e beleza ao sorriso de milhares de famílias tocantinenses.</p>
+      <p class="rv">Somos especializados em implantes dentários e estética oral. Cada caso é planejado com tecnologia digital e executado por profissionais com formação nas melhores escolas de odontologia do país: USP–Bauru e Unesp–Araçatuba.</p>
+      <p class="rv">Acreditamos que o cuidado começa no acolhimento. Aqui você é ouvido com atenção, entende cada etapa do tratamento e é acompanhado até muito depois da última consulta.</p>
+    </div>
+  </div>
+  <div class="story__photo" id="storyPhoto"><img src="images/estrutura.jpg" alt="Estrutura interna da clínica DenteBello" width="1600" height="900" loading="lazy"></div>
+</section>
+
+<!-- IMPLANTE 3D -->
+<section class="implant dark" id="implante" aria-label="Como funciona o implante">
+  <div class="implant__stage">
+    <canvas id="implant-canvas" aria-hidden="true"></canvas>
+    <div class="implant__intro">
+      <h2 class="rv">Cada implante começa muito antes da cirurgia</h2>
+    </div>
+    <div class="implant__steps">
+      <article class="step is-on" data-step="0">
+        <p class="step__n">Primeiro</p>
+        <h3>Planejamento digital</h3>
+        <p>Radiografia digital, escaneamento intraoral e planejamento guiado de cada caso, antes de qualquer procedimento.</p>
+      </article>
+      <article class="step" data-step="1">
+        <p class="step__n">Depois</p>
+        <h3>O implante</h3>
+        <p>O pino de titânio é posicionado com precisão no osso, seguindo o planejamento feito para o seu caso.</p>
+      </article>
+      <article class="step" data-step="2">
+        <p class="step__n">Por fim</p>
+        <h3>Prótese sobre implante</h3>
+        <p>A coroa é confeccionada para combinar com seus dentes em cor e forma, e você volta a sorrir, comer e conversar sem receio.</p>
+      </article>
+    </div>
+    <div class="implant__bar" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- POR QUE -->
+<section class="why wrap" id="porque">
+  <div class="why__head">
+    <h2 class="rv">A melhor tecnologia para cuidar de você</h2>
+    <p class="rv">Equipamentos modernos, protocolos rigorosos e uma equipe que estuda continuamente para entregar resultados naturais e duradouros.</p>
+  </div>
+  <div class="why__body">
+    <div class="why__img"><img src="images/equipe.jpg" alt="Equipe da clínica DenteBello" width="1400" height="790" loading="lazy"></div>
+    <ul class="why__list">
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg><div><h3>Tecnologia de ponta</h3><p>Radiografia digital, escaneamento intraoral e planejamento guiado de cada caso.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5M21 9v6"/></svg><div><h3>Equipe especializada</h3><p>Especializações na USP–Bauru e Unesp–Araçatuba, com fellowship em Jönköping, na Suécia.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><div><h3>Atendimento humanizado</h3><p>Cuidado próximo e sem pressa, do primeiro contato ao acompanhamento pós-tratamento.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><h3>Biossegurança rigorosa</h3><p>Protocolos rígidos de esterilização e resultados acompanhados a longo prazo.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section class="spec" id="tratamentos">
+  <div class="wrap spec__grid">
+    <div class="spec__side">
+      <h2 class="rv">Todos os tratamentos em um só lugar</h2>
+      <p class="rv">Da prevenção à reabilitação completa do sorriso: uma equipe multidisciplinar reunida na mesma clínica, com planejamento integrado para o seu caso.</p>
+      <a class="btn rv" href="#contato">Agendar avaliação</a>
+    </div>
+    <ul class="spec__list">
+      <li class="is-main">Implantes dentários</li>
+      <li class="is-main">Lentes de contato e facetas</li>
+      <li>Clareamento a laser</li>
+      <li>Próteses sobre implante</li>
+      <li>Restaurações estéticas</li>
+      <li>Endodontia</li>
+      <li>Ortodontia</li>
+      <li>Cirurgia oral</li>
+      <li>Periodontia</li>
+      <li>Harmonização facial</li>
+      <li>Odontologia do sono</li>
+      <li>Clínica geral</li>
+    </ul>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<div class="dark" id="resultados">
+<section class="results" aria-label="Resultados">
+  <div class="results__stage">
+    <div class="results__head">
+      <h2>Resultados que transformam vidas</h2>
+      <p>Mais do que dentes: devolvemos a vontade de sorrir, comer e conversar sem receio.</p>
+    </div>
+    <div class="results__track" id="track">
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-1.jpg" alt="Paciente sorrindo após tratamento estético na DenteBello" loading="lazy"></div><figcaption>Tratamento estético</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-2.jpg" alt="Paciente sorrindo com próteses sobre implante" loading="lazy"></div><figcaption>Próteses sobre implante</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-3.jpg" alt="Detalhe de sorriso após clareamento e lentes de contato dental" loading="lazy"></div><figcaption>Clareamento e lentes de contato dental</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-4.jpg" alt="Paciente sorrindo após reabilitação com implantes dentários" loading="lazy"></div><figcaption>Reabilitação com implantes</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-5.jpg" alt="Paciente conferindo o novo sorriso no espelho" loading="lazy"></div><figcaption>O novo sorriso, pela primeira vez no espelho</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-6.jpg" alt="Casal sorrindo após tratamento odontológico" loading="lazy"></div><figcaption>Cuidando de famílias inteiras</figcaption></figure>
+    </div>
+  </div>
+</section>
+<div class="stats" role="list">
+  <div class="stat rv" role="listitem"><b data-count="30" data-prefix="+">+30</b><span>anos de história</span></div>
+  <div class="stat rv" role="listitem"><b data-count="9500" data-prefix="+">+9.500</b><span>pacientes atendidos</span></div>
+  <div class="stat rv" role="listitem"><b data-count="2509" data-prefix="+">+2.509</b><span>implantes realizados</span></div>
+</div>
+</div>
+
+<!-- EQUIPE -->
+<section class="team wrap" id="equipe">
+  <h2 class="rv">Profissionais para cuidar de você</h2>
+  <div class="team__grid">
+    <article class="doc rv">
+      <div class="doc__img"><img src="images/dr-wellington.jpg" alt="Retrato de Dr. Wellington D'Couto" loading="lazy"></div>
+      <h3>Dr. Wellington D'Couto</h3>
+      <p>Implantodontista e endodontista</p>
+      <p class="tag">USP–Bauru · Responsável técnico, CRO-TO</p>
+    </article>
+    <article class="doc rv">
+      <div class="doc__img"><img src="images/dra-rosilene.jpg" alt="Retrato de Dra. Rosilene M. Couto" loading="lazy"></div>
+      <h3>Dra. Rosilene M. Couto</h3>
+      <p>Dentística e estética</p>
+      <p class="tag">Unesp–Araçatuba</p>
+    </article>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="voices" id="depoimentos" aria-label="Depoimentos">
+  <div class="wrap voices__list">
+    <figure class="quote rv">
+      <blockquote>A escolha da DenteBello foi por ser o primeiro consultório aqui de Palmas, onde levei os meus filhos para tratamento há 25 anos. Fui muito bem acolhida e o tratamento de implante teve um resultado melhor do que eu esperava. Recebo elogios sempre, pois todos dizem que ficou bem natural.</blockquote>
+      <figcaption><b>Varna Dopke</b>Reabilitação com implantes</figcaption>
+    </figure>
+    <figure class="quote rv">
+      <blockquote>Perdi meus dentes muito jovem e pensei que iria usar dentadura para sempre. Fui a uma consulta na clínica DenteBello e vi que tinha solução. Fiz meu tratamento com implantes, voltei a sorrir e a comer, ou seja, a ter qualidade de vida.</blockquote>
+      <figcaption><b>Raimunda de Jesus Almeida Assunção</b>Implantes e qualidade de vida</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact dark" id="contato">
+  <div class="wrap">
+    <div class="contact__grid">
+      <div>
+        <h2 class="rv">Seu novo sorriso começa com uma conversa</h2>
+        <p class="contact__lede rv">Pré-agende pelo formulário ou mande um WhatsApp. A gente responde em horário comercial.</p>
+        <div class="info">
+          <div class="rv"><h3>Endereço</h3><p>Qd 104 Norte, Rua NE 05, Lote 48<br>Palmas–TO, CEP 77006-020</p><p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020" target="_blank" rel="noopener">Ver no mapa</a></p></div>
+          <div class="rv"><h3>Telefone e WhatsApp</h3><p><a href="tel:+556332252500">(63) 3225-2500</a><br><a href="https://wa.me/5563999432500" target="_blank" rel="noopener">(63) 99943-2500</a></p></div>
+          <div class="rv"><h3>Horário</h3><p>Segunda a sexta, das 8h às 18h</p></div>
+          <div class="rv"><h3>Redes</h3><p><a href="https://instagram.com/dentebello" target="_blank" rel="noopener">Instagram</a><br><a href="https://facebook.com/dentebbello" target="_blank" rel="noopener">Facebook</a></p></div>
+        </div>
+      </div>
+      <form class="form rv" id="form" novalidate>
+        <h3>Agende sua avaliação</h3>
+        <p>Preencha os campos e continue a conversa pelo WhatsApp.</p>
+        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="f-tel">Telefone ou WhatsApp</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(63) 9 0000-0000" required></div>
+        <div class="field"><label for="f-trat">Tratamento de interesse</label>
+          <select id="f-trat" name="trat">
+            <option>Implantes dentários</option><option>Lentes de contato dental / facetas</option><option>Clareamento a laser</option><option>Tratamento de canal (endodontia)</option><option>Ortodontia</option><option>Prótese sobre implante</option><option>Restaurações estéticas</option><option>Cirurgia oral / extrações</option><option>Outro / não sei ainda</option>
+          </select></div>
+        <div class="field"><label for="f-msg">Mensagem (opcional)</label><textarea id="f-msg" name="msg"></textarea></div>
+        <a class="btn" id="f-send" href="https://wa.me/5563999432500" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Enviar pelo WhatsApp</a>
+        <small id="f-hint">Seu nome e telefone vão junto na mensagem.</small>
+      </form>
+    </div>
+    <div class="map" id="map">
+      <a class="map__ph" href="https://www.google.com/maps/search/?api=1&query=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020" target="_blank" rel="noopener" aria-label="Abrir a localização da DenteBello no Google Maps">
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="800" height="400" fill="#10233A"/>
+          <g stroke="#1D3550" stroke-width="14" fill="none"><path d="M-20 120 L820 90"/><path d="M-20 300 L820 270"/><path d="M180 -20 L220 420"/><path d="M520 -20 L560 420"/></g>
+          <g stroke="#2A4868" stroke-width="5" fill="none"><path d="M-20 200 L820 180"/><path d="M360 -20 L390 420"/><path d="M680 -20 L700 420"/><path d="M60 -20 L80 420"/></g>
+          <rect x="400" y="200" width="110" height="60" rx="8" fill="#16304A"/><rect x="240" y="120" width="100" height="60" rx="8" fill="#16304A"/>
+          <g transform="translate(455 150)"><circle r="34" fill="#1D4ED8" opacity=".25"/><path d="M0 18 C-14 2 -18 -6 -18 -14 a18 18 0 0 1 36 0 c0 8 -4 16 -18 32z" fill="#9DB8FF"/><circle cy="-14" r="6" fill="#10233A"/></g>
+        </svg>
+      </a>
+      <div class="map__card">
+        <h3>Como chegar</h3>
+        <p>Qd 104 Norte, Rua NE 05, Lote 48, Palmas–TO</p>
+        <div class="row">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020" target="_blank" rel="noopener">Traçar rota</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <img src="images/logo.png" alt="DenteBello" width="120" height="40" loading="lazy">
+      <nav aria-label="Rodapé"><a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#resultados">Resultados</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a></nav>
+      <p>© 2026 DenteBello. Responsável técnico: Dr. Wellington D'Couto, CRO-TO.</p>
+    </footer>
+  </div>
+</section>
+</main>
+
+<a class="wa" id="wa" href="https://wa.me/5563999432500" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+  const ease=t=>1-Math.pow(1-t,3);
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const prog=(el)=>{const r=el.getBoundingClientRect();const total=r.height-innerHeight;return total>0?clamp(-r.top/total):0;};
+
+  /* revelações */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=((i%4)*70)+'ms';io.observe(el);});
+
+  /* contadores */
+  const fmt=n=>n.toLocaleString('pt-BR');
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.count,pre=el.dataset.prefix||'';if(reduce){el.textContent=pre+fmt(to);return;}const t0=performance.now(),d=1600;(function f(t){const k=ease(clamp((t-t0)/d));el.textContent=pre+fmt(Math.round(to*k));if(k<1)requestAnimationFrame(f);})(t0);}),{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+  /* formulário → WhatsApp */
+  const f=document.getElementById('form'),send=document.getElementById('f-send'),hint=document.getElementById('f-hint');
+  const build=()=>{const v=k=>f.elements[k].value.trim();let m=`Olá! Gostaria de agendar uma avaliação na DenteBello.\n\nNome: ${v('nome')||'-'}\nTelefone: ${v('tel')||'-'}\nInteresse: ${v('trat')}`;if(v('msg'))m+=`\nMensagem: ${v('msg')}`;send.href='https://wa.me/5563999432500?text='+encodeURIComponent(m);};
+  f.addEventListener('input',build);build();
+  send.addEventListener('click',e=>{const n=f.elements.nome,t=f.elements.tel;if(!n.value.trim()||t.value.replace(/\D/g,'').length<10){e.preventDefault();hint.textContent='Preencha seu nome e um telefone com DDD para continuar.';hint.style.color='#FFB4A8';(n.value.trim()?t:n).focus();}else{hint.textContent='Abrindo o WhatsApp com a sua mensagem.';hint.style.color='';}});
+  f.addEventListener('submit',e=>e.preventDefault());
+
+
+  /* mapa: embed do Google Maps quando o site estiver no domínio próprio */
+  (function(){const m=document.getElementById('map');if(/claudeusercontent|claude\.ai/.test(location.hostname)||location.protocol==='file:')return;
+    const f=document.createElement('iframe');f.title='Mapa da DenteBello no Google Maps';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';
+    f.src='https://www.google.com/maps?q=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020&z=16&output=embed';m.insertBefore(f,m.querySelector('.map__card'));})();
+
+  /* nav e whatsapp */
+  const nav=document.getElementById('nav'),wa=document.getElementById('wa');
+
+  /* scroll */
+  const hero=document.querySelector('.hero'),stage=hero.querySelector('.hero__stage');
+  const story=document.getElementById('storyPhoto');
+  const results=document.querySelector('.results'),track=document.getElementById('track');
+  const implant=document.querySelector('.implant'),steps=[...document.querySelectorAll('.step')],bar=document.querySelector('.implant__bar');
+  window.__implantP=0;
+  let ticking=false;
+  function onScroll(){
+    ticking=false;
+    const y=scrollY;
+    nav.classList.toggle('is-solid',y>innerHeight*1.4);
+    wa.classList.toggle('is-on',y>innerHeight*.8);
+    if(reduce)return;
+    /* hero: moldura se abre até tela cheia */
+    const hp=prog(hero), a=ease(clamp(hp/0.62)), b=clamp((hp-0.55)/0.35);
+    const mob=innerWidth<760;
+    const w0=mob?88:54, h0=mob?44:54, l0=mob?6:42, t0=mob?46:40;
+    stage.style.setProperty('--fw',lerp(w0,100,a)+'%');
+    stage.style.setProperty('--fh',lerp(h0,mob?60:100,a)+'%');
+    stage.style.setProperty('--bgo',mob?a:0);
+    stage.style.setProperty('--fl',lerp(l0,0,a)+'%');
+    stage.style.setProperty('--ft',lerp(t0,0,a)+'%');
+    stage.style.setProperty('--fr',lerp(28,0,a)+'px');
+    stage.style.setProperty('--zs',lerp(1.18,1.0,a));
+    stage.style.setProperty('--ty',(-a*18)+'vh');
+    stage.style.setProperty('--to',1-clamp(a*1.6));
+    stage.style.setProperty('--so',clamp(a*1.2));
+    stage.style.setProperty('--eo',ease(b));
+    stage.style.setProperty('--ey',(1-ease(b))*28+'px');
+    /* história: foto se abre */
+    if(story){const r=story.getBoundingClientRect();const p=clamp(1-(r.top-innerHeight*.2)/(innerHeight*.8));story.style.setProperty('--ci',(18*(1-ease(p)))+'%');story.style.setProperty('--py',(-7+p*7)+'%');}
+    /* implante */
+    const ip=prog(implant);window.__implantP=ip;bar.style.setProperty('--ip',ip);
+    const s=ip<0.36?0:ip<0.68?1:2;steps.forEach((el,i)=>el.classList.toggle('is-on',i===s));
+    /* resultados: trilho horizontal */
+    const rp=prog(results);const max=track.scrollWidth-innerWidth;track.style.setProperty('--hx',(-rp*Math.max(0,max))+'px');
+  }
+  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll);}},{passive:true});
+  addEventListener('resize',onScroll);onScroll();
+
+  /* ano: 1992 → hoje */
+  const yEl=document.getElementById('year');
+  if(!reduce){const yio=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;yio.disconnect();const t0=performance.now();(function f(t){const k=ease(clamp((t-t0)/1400));yEl.textContent=Math.round(lerp(2026,1992,k));if(k<1)requestAnimationFrame(f);})(t0);},{threshold:.6});yio.observe(yEl);}
+})();
+</script>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+const canvas=document.getElementById('implant-canvas');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+const scene=new THREE.Scene();
+const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;
+const camera=new THREE.PerspectiveCamera(28,1,0.1,100);
+const key=new THREE.DirectionalLight(0xffffff,2.0);key.position.set(3,6,7);scene.add(key);
+const rim=new THREE.DirectionalLight(0x9db8ff,1.8);rim.position.set(-6,3,-5);scene.add(rim);
+scene.add(new THREE.AmbientLight(0x3a4a62,.7));
+
+/* materiais */
+const titanium=new THREE.MeshPhysicalMaterial({color:0xbcc3cb,metalness:1,roughness:.28,clearcoat:.3});
+const abutMat=new THREE.MeshPhysicalMaterial({color:0xcfd5db,metalness:1,roughness:.2});
+const ceramic=new THREE.MeshPhysicalMaterial({color:0xf4f1e8,roughness:.22,clearcoat:1,clearcoatRoughness:.1,sheen:.5,sheenColor:new THREE.Color(0xe6eeff)});
+const enamel=new THREE.MeshPhysicalMaterial({color:0xeee8da,roughness:.3,clearcoat:.6,clearcoatRoughness:.2});
+const rootMat=new THREE.MeshStandardMaterial({color:0xe8dcc0,roughness:.6});
+const gumMat=new THREE.MeshPhysicalMaterial({color:0xd27a7c,roughness:.45,clearcoat:.5,clearcoatRoughness:.35,sheen:.6,sheenColor:new THREE.Color(0xffc4c4)});
+const boneMat=new THREE.MeshStandardMaterial({color:0xe6dbc3,roughness:.85});
+const cutMat=new THREE.MeshStandardMaterial({color:0xd9c9a6,roughness:.95});
+
+/* coroa de molar: cúspides, fossa central, contorno e colo */
+function molarGeometry(){
+  const g=new THREE.SphereGeometry(1,128,96);const p=g.attributes.position;const v=new THREE.Vector3();
+  const cusps=[[.5,.45],[-.5,.45],[.5,-.45],[-.5,-.45]];
+  for(let i=0;i<p.count;i++){
+    v.fromBufferAttribute(p,i);
+    const th=Math.atan2(v.z,v.x);const sq=1/Math.pow(Math.pow(Math.abs(Math.cos(th)),4)+Math.pow(Math.abs(Math.sin(th)),4),.25);
+    let r=Math.hypot(v.x,v.z),y=v.y;
+    let k=Math.pow(sq,.55);
+    if(y<0){k*=1-0.42*Math.pow(-y,1.6);y=y*1.05;}
+    else{k*=1+0.06*Math.sin(Math.min(1,y*2)*Math.PI);y=y*0.62;}
+    let x=v.x/(r||1)*r*k*1.0,z=v.z/(r||1)*r*k*0.88;
+    if(v.y>0.35){
+      const w=THREE.MathUtils.smoothstep(v.y,.35,.95);
+      let h=0;for(const[cx,cz]of cusps){const d=(x-cx)**2+(z-cz)**2;h+=0.22*Math.exp(-d/0.09);}
+      h-=0.16*Math.exp(-(x*x+z*z)/0.05);
+      h-=0.06*Math.exp(-(x*x)/0.01)*Math.exp(-(z*z)/0.4);
+      h-=0.06*Math.exp(-(z*z)/0.01)*Math.exp(-(x*x)/0.4);
+      y+=h*w;
+    }
+    p.setXYZ(i,x,y,z);
+  }
+  g.computeVertexNormals();g.computeBoundingBox();
+  const bb=g.boundingBox;g.translate(0,-bb.min.y,0);
+  return g;
+}
+const molar=molarGeometry();
+const crownH=(()=>{molar.computeBoundingBox();return molar.boundingBox.max.y;})();
+
+/* raiz */
+function rootGeometry(len,r){const pts=[];for(let i=0;i<=24;i++){const t=i/24;pts.push(new THREE.Vector2(r*(1-0.78*Math.pow(t,1.3))+0.0001,-t*len));}pts.push(new THREE.Vector2(0,-len-0.05));return new THREE.LatheGeometry(pts.reverse(),48);}
+
+/* pino com roscas */
+const H=2.5,R=0.42;const sp=[new THREE.Vector2(0,-H/2-0.1)];
+for(let i=0;i<=300;i++){const t=i/300;const y=-H/2+t*H;const taper=0.6+0.4*Math.min(1,t*2.4);const ph=(i%12)/12;const th=ph<.5?ph*2:(1-ph)*2;const r=t>0.93?R*0.92:R*taper*(0.78+0.22*th);sp.push(new THREE.Vector2(r,y));}
+sp.push(new THREE.Vector2(R*0.92,H/2+0.05),new THREE.Vector2(0,H/2+0.05));
+const screw=new THREE.Mesh(new THREE.LatheGeometry(sp,64),titanium);
+
+/* pilar */
+const ap=[new THREE.Vector2(0,0),new THREE.Vector2(.36,0),new THREE.Vector2(.42,.1),new THREE.Vector2(.42,.32),new THREE.Vector2(.3,.42),new THREE.Vector2(.26,1.0),new THREE.Vector2(.18,1.1),new THREE.Vector2(0,1.12)];
+const abut=new THREE.Mesh(new THREE.LatheGeometry(ap,48),abutMat);
+
+/* coroa do implante */
+const crown=new THREE.Mesh(molar,ceramic);crown.scale.setScalar(0.9);
+
+/* arcada em corte: osso + gengiva (metade de trás, o corte fica de frente) */
+const GUM_TOP=0.08,BONE_TOP=-0.32,BOTTOM=-3.3,HALF=3.6,DEPTH=2.4;
+function boneShape(){const s=new THREE.Shape();s.moveTo(-HALF,BOTTOM);s.lineTo(HALF,BOTTOM);s.lineTo(HALF,BONE_TOP);
+  for(let i=0;i<=60;i++){const x=HALF-i/60*2*HALF;const y=BONE_TOP+0.18*Math.exp(-((Math.abs(x)-1.22)**2)/0.06);s.lineTo(x,y);}
+  s.closePath();return s;}
+function gumShape(){const s=new THREE.Shape();s.moveTo(-HALF,BONE_TOP-0.5);s.lineTo(HALF,BONE_TOP-0.5);
+  for(let i=0;i<=80;i++){const x=HALF-i/80*2*HALF;const ax=Math.abs(x);const y=GUM_TOP+0.42*Math.exp(-((ax-1.22)**2)/0.05)-0.06*Math.exp(-(x*x)/0.6)+(ax>1.2?-0.05:0);s.lineTo(x,y);}
+  s.closePath();return s;}
+const ext={depth:DEPTH,bevelEnabled:true,bevelThickness:.08,bevelSize:.08,bevelSegments:4,curveSegments:24};
+function block(shape,side,face,offZ){const g=new THREE.ExtrudeGeometry(shape,ext);g.translate(0,0,-DEPTH-offZ);return new THREE.Mesh(g,[face,side]);}
+const base=new THREE.Group();
+const bone=block(boneShape(),boneMat,cutMat,0.02);
+const gum=block(gumShape(),gumMat,gumMat,-0.06);
+base.add(bone,gum);
+
+/* dentes vizinhos */
+function natural(x,s){const t=new THREE.Group();const c=new THREE.Mesh(molar,enamel);c.scale.setScalar(s);c.position.y=GUM_TOP-0.02;const r1=new THREE.Mesh(rootGeometry(2.4,.32),rootMat);r1.position.set(-.28*s,GUM_TOP+0.05,0);r1.rotation.z=-0.06;const r2=r1.clone();r2.position.x=.28*s;r2.rotation.z=0.06;t.add(c,r1,r2);t.position.x=x;return t;}
+const nL=natural(-2.4,0.95),nR=natural(2.4,0.97);base.add(nL,nR);
+
+/* guia do planejamento */
+const guide=new THREE.Mesh(new THREE.CylinderGeometry(R*1.05,R*0.75,H,48,1,true),new THREE.MeshBasicMaterial({color:0x9db8ff,transparent:true,opacity:0,wireframe:true}));
+const FINAL_SCREW=BONE_TOP-H/2-0.02;guide.position.y=FINAL_SCREW;
+const axis=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,6.5,8),new THREE.MeshBasicMaterial({color:0x9db8ff,transparent:true,opacity:0}));axis.position.y=0.4;
+
+const group=new THREE.Group();group.add(base,guide,axis,screw,abut,crown);scene.add(group);
+
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5);},{passive:true});
+function size(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+addEventListener('resize',size);size();
+
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),sm=t=>t*t*(3-2*t),L=(a,b,t)=>a+(b-a)*t;
+let cur=0,visible=false;
+new IntersectionObserver(es=>{visible=es[0].isIntersecting;},{rootMargin:'100px'}).observe(canvas);
+const clock=new THREE.Clock();
+const ABUT_FINAL=BONE_TOP+0.02, CROWN_FINAL=GUM_TOP-0.02;
+function frame(){
+  requestAnimationFrame(frame);
+  if(!visible)return;
+  const dt=Math.min(clock.getDelta(),0.25);const t=clock.elapsedTime;
+  cur+=(window.__implantP-cur)*(1-Math.exp(-dt*7));const P=cur;
+  const mob=innerWidth<860;
+  const s1=sm(cl(P/0.25)), s2=sm(cl((P-0.30)/0.32)), s3a=sm(cl((P-0.62)/0.16)), s3b=sm(cl((P-0.74)/0.2));
+  /* fase 1: guia aparece */
+  const gOp=0.5*s1*(1-s2*0.9);guide.material.opacity=gOp;axis.material.opacity=0.6*s1*(1-s2);
+  /* fase 2: pino desce girando até o osso */
+  screw.position.y=L(2.9,FINAL_SCREW,s2);screw.rotation.y=-s2*Math.PI*7;
+  /* fase 3: pilar e coroa */
+  abut.position.y=L(6.5,ABUT_FINAL,s3a);
+  crown.position.y=L(7.5,CROWN_FINAL,s3b);crown.rotation.y=(1-s3b)*0.8;
+  abut.visible=s3a>0.001;crown.visible=s3b>0.001;
+  group.position.set(mob?0:-4.0,mob?1.3:-0.55,0);
+  const sc=mob?0.64:0.78;group.scale.setScalar(sc);
+  group.rotation.y=-0.32+0.12*Math.sin(t*0.3)+mx*0.35;
+  group.rotation.x=0.22+my*0.12;
+  camera.position.set(0,mob?2.2:1.6,mob?24:L(19,17.5,P));camera.lookAt(group.position.x*0.15,group.position.y*0.6,0);
+  renderer.render(scene,camera);
+}
+frame();
+}
+</script>
+</body>
+</html>
