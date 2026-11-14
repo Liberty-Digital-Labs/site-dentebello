@@ -671,7 +671,7 @@ try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPre
 const _gl=renderer.getContext(),_dbg=_gl.getExtension('WEBGL_debug_renderer_info'),_rn=_dbg?String(_gl.getParameter(_dbg.UNMASKED_RENDERER_WEBGL)):'';
 const LITE=document.documentElement.classList.contains('gpu-lite')||/SwiftShader|Basic Render|llvmpipe|Software|Mesa OffScreen/i.test(_rn)||(navigator.hardwareConcurrency||8)<=4;
 window.__implantMode=LITE?'lite':'full';
-const DPR=()=>LITE?Math.min(devicePixelRatio||1,0.6):Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
+const DPR=()=>LITE?Math.min(devicePixelRatio||1,0.9):Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
 renderer.setPixelRatio(DPR());
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
@@ -812,7 +812,7 @@ window.__implantStats={frameMs:0,drawn:0};
 function frame(now){
   const dt=Math.min((now-last)/1000,0.1);last=now;const t=now/1000;
   cur+=(window.__implantP-cur)*(1-Math.exp(-dt*11));const P=cur;const mob=isMobile();
-  if(LITE){const moved=Math.abs(P-lastDrawP)>0.0006||Math.abs(mx-lastMx)>0.01||warm<3;if(!moved)return;lastDrawP=P;lastMx=mx;lastMy=my;warm++;}
+  if(LITE){const moved=Math.abs(P-lastDrawP)>0.0002||Math.abs(mx-lastMx)>0.01||warm<3;if(!moved)return;lastDrawP=P;lastMx=mx;lastMy=my;warm++;}
   const _t0=performance.now();
   const a=ss(P,0,0.28),b=ss(P,0.30,0.62),c=ss(P,0.62,0.95);
   const s1=ss(P,0,0.22),s2=ss(P,0.30,0.62),s3a=ss(P,0.64,0.78),s3b=ss(P,0.76,0.95);
