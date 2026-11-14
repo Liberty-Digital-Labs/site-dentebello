@@ -671,7 +671,7 @@ try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPre
 const _gl=renderer.getContext(),_dbg=_gl.getExtension('WEBGL_debug_renderer_info'),_rn=_dbg?String(_gl.getParameter(_dbg.UNMASKED_RENDERER_WEBGL)):'';
 const LITE=document.documentElement.classList.contains('gpu-lite')||/SwiftShader|Basic Render|llvmpipe|Software|Mesa OffScreen/i.test(_rn)||(navigator.hardwareConcurrency||8)<=4;
 window.__implantMode=LITE?'lite':'full';
-const DPR=()=>LITE?Math.min(devicePixelRatio||1,0.9):Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
+const DPR=()=>LITE?Math.min(devicePixelRatio||1,0.75):Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
 renderer.setPixelRatio(DPR());
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
