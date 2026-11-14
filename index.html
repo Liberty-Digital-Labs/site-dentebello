@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DenteBello | Implantes e Estética Dental em Palmas–TO</title>
-<meta name="description" content="Implantes dentários e estética oral em Palmas–TO desde 1992. Agende sua avaliação na DenteBello.">
+<meta name="description" content="DenteBello: implantodontia e estética oral em Palmas–TO desde 1992. Planejamento digital, formação USP e Unesp. Agende sua avaliação.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -96,14 +96,16 @@ p{text-wrap:pretty}
 .dark{background:var(--deep);color:#EEF2F6}
 .implant{position:relative;height:420vh}
 .implant__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-columns:57fr 43fr;align-items:center}
-#implant-canvas{position:absolute;inset:0;width:100%;height:100%}
+#implant-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.implant__stage::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse 70% 80% at 36% 50%,transparent 40%,rgba(10,21,34,.62) 100%)}
+@media (max-width:860px){.implant__stage::after{background:radial-gradient(ellipse 90% 60% at 50% 32%,transparent 40%,rgba(10,21,34,.7) 100%)}}
 .implant__intro{position:absolute;top:clamp(96px,13vh,140px);left:57%;max-width:560px;z-index:2;padding-right:var(--gutter)}
 @media (max-width:860px){.implant__intro{left:var(--gutter);top:88px}}
 .implant__intro h2{font-size:clamp(30px,3vw,46px);line-height:1.05}
 .implant__steps{grid-column:2;position:relative;z-index:2;padding-right:var(--gutter);height:260px;margin-top:24vh}
 .step{position:absolute;inset:0 var(--gutter) auto 0;max-width:430px;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .step.is-on{opacity:1;transform:none}
-.step__n{font-family:var(--display);font-style:italic;font-size:22px;color:var(--cobalt-light);margin-bottom:10px}
+.step__n{font-family:var(--text);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt-light);margin-bottom:14px}
 .step h3{font-size:clamp(28px,2.8vw,42px);line-height:1.05;margin-bottom:14px}
 .step p{color:rgba(238,242,246,.86);font-size:17px}
 .implant__bar{position:absolute;left:var(--gutter);bottom:clamp(32px,6vh,64px);width:min(320px,40vw);height:1px;background:rgba(255,255,255,.16);z-index:2}
@@ -271,16 +273,16 @@ p{text-wrap:pretty}
 <section class="hero" id="inicio" aria-label="Apresentação">
   <div class="hero__stage">
     <div class="hero__title">
-      <h1><span>Volte a sorrir</span><span class="r">com confiança</span></h1>
+      <h1><span>Sorrir bem</span><span class="r">é uma decisão.</span></h1>
     </div>
-    <p class="hero__lede">Implantes e estética dental para você recuperar a segurança de sorrir, há mais de 30 anos cuidando de Palmas.</p>
+    <p class="hero__lede">Implantodontia e estética oral em Palmas desde 1992. Planejamento digital, formação na USP e na Unesp, e um atendimento que não tem pressa.</p>
     <div class="hero__frame" id="heroFrame">
       <img class="hero__img" src="images/hero.jpg" alt="Recepção da clínica DenteBello em Palmas–TO" width="1600" height="1000">
       <div class="hero__shade"></div>
     </div>
     <div class="hero__end">
-      <h2>Implante e estética oral em Palmas</h2>
-      <p>Implantes e estética dental para você recuperar a segurança de sorrir, há mais de 30 anos cuidando de Palmas.</p>
+      <h2>Desde 1992, cuidando do sorriso de quem construiu Palmas.</h2>
+      <p>Implantes dentários, lentes de contato e reabilitação completa do sorriso, com planejamento digital e acompanhamento próximo do primeiro ao último dia.</p>
       <a class="btn" href="#contato">Agendar avaliação</a>
     </div>
     <p class="hero__meta">Qd 104 Norte, Palmas–TO<br>Segunda a sexta, 8h às 18h</p>
@@ -290,12 +292,12 @@ p{text-wrap:pretty}
 <!-- HISTÓRIA -->
 <section class="story wrap" id="sobre">
   <div class="story__grid">
-    <div class="story__year rv" aria-hidden="true"><span id="year">1992</span><small>Um dos primeiros consultórios odontológicos de Palmas.</small></div>
+    <div class="story__year rv" aria-hidden="true"><span id="year">1992</span><small>Um dos primeiros consultórios odontológicos de Palmas. A cidade tinha três anos.</small></div>
     <div>
-      <h2 class="rv">Tradição e excelência desde 1992</h2>
-      <p class="rv">A DenteBello nasceu em 1992 como um dos primeiros consultórios odontológicos de Palmas e cresceu junto com a cidade. São mais de 30 anos dedicados a devolver função, saúde e beleza ao sorriso de milhares de famílias tocantinenses.</p>
-      <p class="rv">Somos especializados em implantes dentários e estética oral. Cada caso é planejado com tecnologia digital e executado por profissionais com formação nas melhores escolas de odontologia do país: USP–Bauru e Unesp–Araçatuba.</p>
-      <p class="rv">Acreditamos que o cuidado começa no acolhimento. Aqui você é ouvido com atenção, entende cada etapa do tratamento e é acompanhado até muito depois da última consulta.</p>
+      <h2 class="rv">Três décadas. Uma mesma forma de cuidar.</h2>
+      <p class="rv">A DenteBello abriu as portas em 1992, quando Palmas ainda era uma cidade em construção. Cresceu com ela, e hoje recebe os filhos dos primeiros pacientes. São mais de trinta anos devolvendo função, saúde e beleza ao sorriso de milhares de famílias tocantinenses.</p>
+      <p class="rv">A especialidade da casa é a reabilitação com implantes e a estética oral. Cada caso nasce de um planejamento digital, com radiografia e escaneamento intraoral, e é conduzido por profissionais formados na USP–Bauru e na Unesp–Araçatuba, com fellowship em Jönköping, na Suécia.</p>
+      <p class="rv">O que não mudou em trinta anos: você é recebido pelo nome, entende cada etapa antes de começar e continua acompanhado muito depois da última consulta.</p>
     </div>
   </div>
   <div class="story__photo" id="storyPhoto"><img src="images/estrutura.jpg" alt="Estrutura interna da clínica DenteBello" width="1600" height="900" loading="lazy"></div>
@@ -306,23 +308,23 @@ p{text-wrap:pretty}
   <div class="implant__stage">
     <canvas id="implant-canvas" aria-hidden="true"></canvas>
     <div class="implant__intro">
-      <h2 class="rv">Cada implante começa muito antes da cirurgia</h2>
+      <h2 class="rv">A cirurgia é a parte mais curta de um implante.</h2>
     </div>
     <div class="implant__steps">
       <article class="step is-on" data-step="0">
-        <p class="step__n">Primeiro</p>
-        <h3>Planejamento digital</h3>
-        <p>Radiografia digital, escaneamento intraoral e planejamento guiado de cada caso, antes de qualquer procedimento.</p>
+        <p class="step__n">01 · Planejamento</p>
+        <h3>Uma cópia digital da sua boca</h3>
+        <p>Radiografia digital e escaneamento intraoral criam um modelo fiel da sua arcada. É nele que o implante é posicionado primeiro, milímetro a milímetro, antes de qualquer procedimento.</p>
       </article>
       <article class="step" data-step="1">
-        <p class="step__n">Depois</p>
-        <h3>O implante</h3>
-        <p>O pino de titânio é posicionado com precisão no osso, seguindo o planejamento feito para o seu caso.</p>
+        <p class="step__n">02 · Cirurgia</p>
+        <h3>Titânio no lugar exato</h3>
+        <p>Um pino de titânio, biocompatível, é posicionado no osso exatamente onde o planejamento definiu. Com o tempo, o osso se integra a ele e forma uma base firme para o novo dente.</p>
       </article>
       <article class="step" data-step="2">
-        <p class="step__n">Por fim</p>
-        <h3>Prótese sobre implante</h3>
-        <p>A coroa é confeccionada para combinar com seus dentes em cor e forma, e você volta a sorrir, comer e conversar sem receio.</p>
+        <p class="step__n">03 · Prótese</p>
+        <h3>A coroa definitiva</h3>
+        <p>A coroa em cerâmica é feita sob medida para combinar com os dentes vizinhos em cor, forma e translucidez. Você volta a sorrir, comer e conversar sem pensar nisso.</p>
       </article>
     </div>
     <div class="implant__bar" aria-hidden="true"><i></i></div>
@@ -332,16 +334,16 @@ p{text-wrap:pretty}
 <!-- POR QUE -->
 <section class="why wrap" id="porque">
   <div class="why__head">
-    <h2 class="rv">A melhor tecnologia para cuidar de você</h2>
-    <p class="rv">Equipamentos modernos, protocolos rigorosos e uma equipe que estuda continuamente para entregar resultados naturais e duradouros.</p>
+    <h2 class="rv">Tecnologia a serviço de um atendimento sem pressa.</h2>
+    <p class="rv">Equipamento de ponta importa. Importa mais quem o opera, e quanto tempo dedica a você.</p>
   </div>
   <div class="why__body">
     <div class="why__img"><img src="images/equipe.jpg" alt="Equipe da clínica DenteBello" width="1400" height="790" loading="lazy"></div>
     <ul class="why__list">
-      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg><div><h3>Tecnologia de ponta</h3><p>Radiografia digital, escaneamento intraoral e planejamento guiado de cada caso.</p></div></li>
-      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5M21 9v6"/></svg><div><h3>Equipe especializada</h3><p>Especializações na USP–Bauru e Unesp–Araçatuba, com fellowship em Jönköping, na Suécia.</p></div></li>
-      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><div><h3>Atendimento humanizado</h3><p>Cuidado próximo e sem pressa, do primeiro contato ao acompanhamento pós-tratamento.</p></div></li>
-      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><h3>Biossegurança rigorosa</h3><p>Protocolos rígidos de esterilização e resultados acompanhados a longo prazo.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg><div><h3>Planejamento guiado</h3><p>Radiografia digital, escaneamento intraoral e cirurgia planejada no computador: cada decisão é tomada antes de você sentar na cadeira.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5M21 9v6"/></svg><div><h3>Formação de referência</h3><p>Especializações na USP–Bauru e na Unesp–Araçatuba, e fellowship em Jönköping, na Suécia, o país onde a implantodontia moderna nasceu.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><div><h3>Atendimento próximo</h3><p>Da primeira avaliação ao acompanhamento, você é acompanhado de perto pelos mesmos profissionais. Consultas com tempo para ouvir e explicar.</p></div></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><h3>Biossegurança e longo prazo</h3><p>Protocolos rigorosos de esterilização e casos acompanhados por anos, não por semanas.</p></div></li>
     </ul>
   </div>
 </section>
@@ -350,8 +352,8 @@ p{text-wrap:pretty}
 <section class="spec" id="tratamentos">
   <div class="wrap spec__grid">
     <div class="spec__side">
-      <h2 class="rv">Todos os tratamentos em um só lugar</h2>
-      <p class="rv">Da prevenção à reabilitação completa do sorriso: uma equipe multidisciplinar reunida na mesma clínica, com planejamento integrado para o seu caso.</p>
+      <h2 class="rv">Toda a odontologia, sob um mesmo planejamento.</h2>
+      <p class="rv">Da prevenção à reabilitação completa. Uma equipe multidisciplinar na mesma clínica, para que o seu caso seja pensado inteiro, e não em partes.</p>
       <a class="btn rv" href="#contato">Agendar avaliação</a>
     </div>
     <ul class="spec__list">
@@ -376,21 +378,21 @@ p{text-wrap:pretty}
 <section class="results" aria-label="Resultados">
   <div class="results__stage">
     <div class="results__head">
-      <h2>Resultados que transformam vidas</h2>
-      <p>Mais do que dentes: devolvemos a vontade de sorrir, comer e conversar sem receio.</p>
+      <h2>O que muda quando você volta a sorrir.</h2>
+      <p>Mais do que dentes: a vontade de rir sem a mão na boca, de comer o que gosta, de conversar sem receio.<br><small style="opacity:.6">Imagens ilustrativas.</small></p>
     </div>
     <div class="results__track" id="track">
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-1.jpg" alt="Paciente sorrindo após tratamento estético na DenteBello" loading="lazy"></div><figcaption>Tratamento estético</figcaption></figure>
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-2.jpg" alt="Paciente sorrindo com próteses sobre implante" loading="lazy"></div><figcaption>Próteses sobre implante</figcaption></figure>
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-3.jpg" alt="Detalhe de sorriso após clareamento e lentes de contato dental" loading="lazy"></div><figcaption>Clareamento e lentes de contato dental</figcaption></figure>
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-4.jpg" alt="Paciente sorrindo após reabilitação com implantes dentários" loading="lazy"></div><figcaption>Reabilitação com implantes</figcaption></figure>
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-5.jpg" alt="Paciente conferindo o novo sorriso no espelho" loading="lazy"></div><figcaption>O novo sorriso, pela primeira vez no espelho</figcaption></figure>
-      <figure class="shot"><div class="shot__img"><img src="images/sorriso-6.jpg" alt="Casal sorrindo após tratamento odontológico" loading="lazy"></div><figcaption>Cuidando de famílias inteiras</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-1.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Lentes de contato dental</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-2.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Reabilitação com implantes</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-3.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Clareamento</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-4.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Prótese sobre implante</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-5.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Harmonia do sorriso</figcaption></figure>
+      <figure class="shot"><div class="shot__img"><img src="images/sorriso-6.jpg" alt="Sorriso natural, imagem ilustrativa" loading="lazy"></div><figcaption>Sorriso em família</figcaption></figure>
     </div>
   </div>
 </section>
 <div class="stats" role="list">
-  <div class="stat rv" role="listitem"><b data-count="30" data-prefix="+">+30</b><span>anos de história</span></div>
+  <div class="stat rv" role="listitem"><b data-count="30" data-prefix="+">+30</b><span>anos cuidando de Palmas</span></div>
   <div class="stat rv" role="listitem"><b data-count="9500" data-prefix="+">+9.500</b><span>pacientes atendidos</span></div>
   <div class="stat rv" role="listitem"><b data-count="2509" data-prefix="+">+2.509</b><span>implantes realizados</span></div>
 </div>
@@ -398,19 +400,19 @@ p{text-wrap:pretty}
 
 <!-- EQUIPE -->
 <section class="team wrap" id="equipe">
-  <h2 class="rv">Profissionais para cuidar de você</h2>
+  <h2 class="rv">Quem vai cuidar de você.</h2>
   <div class="team__grid">
     <article class="doc rv">
       <div class="doc__img"><img src="images/dr-wellington.jpg" alt="Retrato de Dr. Wellington D'Couto" loading="lazy"></div>
       <h3>Dr. Wellington D'Couto</h3>
-      <p>Implantodontista e endodontista</p>
-      <p class="tag">USP–Bauru · Responsável técnico, CRO-TO</p>
+      <p>Implantodontista e endodontista. Conduz os casos de implante e reabilitação do planejamento à prótese final.</p>
+      <p class="tag">Especialização na USP–Bauru · Responsável técnico, CRO-TO</p>
     </article>
     <article class="doc rv">
       <div class="doc__img"><img src="images/dra-rosilene.jpg" alt="Retrato de Dra. Rosilene M. Couto" loading="lazy"></div>
       <h3>Dra. Rosilene M. Couto</h3>
-      <p>Dentística e estética</p>
-      <p class="tag">Unesp–Araçatuba</p>
+      <p>Dentística e estética. Responsável pelas lentes de contato, facetas, clareamento e pelo acabamento de cada sorriso.</p>
+      <p class="tag">Especialização na Unesp–Araçatuba</p>
     </article>
   </div>
 </section>
@@ -434,8 +436,8 @@ p{text-wrap:pretty}
   <div class="wrap">
     <div class="contact__grid">
       <div>
-        <h2 class="rv">Seu novo sorriso começa com uma conversa</h2>
-        <p class="contact__lede rv">Pré-agende pelo formulário ou mande um WhatsApp. A gente responde em horário comercial.</p>
+        <h2 class="rv">Vamos conversar sobre o seu sorriso.</h2>
+        <p class="contact__lede rv">Conte o que te incomoda. A primeira conversa é pelo WhatsApp, e a avaliação acontece na clínica, com calma e sem compromisso.</p>
         <div class="info">
           <div class="rv"><h3>Endereço</h3><p>Qd 104 Norte, Rua NE 05, Lote 48<br>Palmas–TO, CEP 77006-020</p><p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020" target="_blank" rel="noopener">Ver no mapa</a></p></div>
           <div class="rv"><h3>Telefone e WhatsApp</h3><p><a href="tel:+556332252500">(63) 3225-2500</a><br><a href="https://wa.me/5563999432500" target="_blank" rel="noopener">(63) 99943-2500</a></p></div>
@@ -445,7 +447,7 @@ p{text-wrap:pretty}
       </div>
       <form class="form rv" id="form" novalidate>
         <h3>Agende sua avaliação</h3>
-        <p>Preencha os campos e continue a conversa pelo WhatsApp.</p>
+        <p>Em poucos campos. A conversa continua no WhatsApp da clínica.</p>
         <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
         <div class="field"><label for="f-tel">Telefone ou WhatsApp</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(63) 9 0000-0000" required></div>
         <div class="field"><label for="f-trat">Tratamento de interesse</label>
@@ -479,7 +481,7 @@ p{text-wrap:pretty}
     <footer class="footer">
       <img src="images/logo.png" alt="DenteBello" width="120" height="40" loading="lazy">
       <nav aria-label="Rodapé"><a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#resultados">Resultados</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a></nav>
-      <p>© 2026 DenteBello. Responsável técnico: Dr. Wellington D'Couto, CRO-TO.</p>
+      <p>© 2026 DenteBello · Odontologia em Palmas desde 1992 · Responsável técnico: Dr. Wellington D'Couto, CRO-TO.</p>
     </footer>
   </div>
 </section>
@@ -570,38 +572,50 @@ p{text-wrap:pretty}
 <script type="module">
 import * as THREE from 'three';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 (function(){
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 const canvas=document.getElementById('implant-canvas');
+const isMobile=()=>innerWidth<860;
 let renderer;
-try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});}catch(e){canvas.style.display='none';return;}
-renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
-renderer.setClearColor(0x000000,0);
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});}catch(e){canvas.style.display='none';return;}
+const DPR=()=>Math.min(devicePixelRatio||1,isMobile()?1.5:2);
+renderer.setPixelRatio(DPR());
 renderer.outputColorSpace=THREE.SRGBColorSpace;
-renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.0;
-canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Animação 3D de um implante dentário sendo colocado na gengiva');
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Animação 3D: planejamento digital, colocação do implante de titânio e encaixe da coroa de cerâmica');
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();canvas.style.display='none';});
 
-const scene=new THREE.Scene();
-const pm=new THREE.PMREMGenerator(renderer);const room=new RoomEnvironment();
-scene.environment=pm.fromScene(room,0.04).texture;pm.dispose();
-const camera=new THREE.PerspectiveCamera(30,1,0.5,80);
-const key=new THREE.DirectionalLight(0xffffff,1.6);key.position.set(3,6,7);scene.add(key);
-const rim=new THREE.DirectionalLight(0xa9c2ff,1.4);rim.position.set(-6,3,-5);scene.add(rim);
-scene.add(new THREE.HemisphereLight(0xdfe8ff,0x1a2433,.35));
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),sm=t=>t*t*(3-2*t),L=(a,b,t)=>a+(b-a)*t,ss=(x,a,b)=>sm(cl((x-a)/(b-a)));
+const BG=new THREE.Color(0x0A1522);
+const scene=new THREE.Scene();scene.background=BG;scene.fog=new THREE.Fog(BG,20,44);
+const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;pm.dispose();scene.environmentIntensity=0.4;
+const camera=new THREE.PerspectiveCamera(28,1,0.5,80);
 
-const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),sm=t=>t*t*(3-2*t),L=(a,b,t)=>a+(b-a)*t;
-const ss=(x,a,b)=>sm(cl((x-a)/(b-a)));
+/* ---------- luz de estúdio ---------- */
+const key=new THREE.DirectionalLight(0xeef3ff,1.6);key.position.set(4,7,6);key.castShadow=true;
+key.shadow.mapSize.set(2048,2048);key.shadow.camera.near=1;key.shadow.camera.far=30;
+key.shadow.camera.left=-7;key.shadow.camera.right=7;key.shadow.camera.top=7;key.shadow.camera.bottom=-7;key.shadow.bias=-0.0004;key.shadow.normalBias=0.03;key.shadow.radius=4;
+const fill=new THREE.DirectionalLight(0x9db8ff,.55);fill.position.set(-5,2,5);
+const rim=new THREE.DirectionalLight(0xbfd4ff,1.7);rim.position.set(-4,4,-6);
+const hemi=new THREE.HemisphereLight(0xe8eefc,0x0e1826,.35);
+scene.add(key,fill,rim,hemi);
+const KEY_COOL=new THREE.Color(0xeef3ff),KEY_WARM=new THREE.Color(0xfff0dc);
 
 /* ---------- materiais ---------- */
-const titanium=new THREE.MeshPhysicalMaterial({color:0xbfc6ce,metalness:1,roughness:.26,clearcoat:.25});
-const abutMat=new THREE.MeshPhysicalMaterial({color:0xd3d9df,metalness:1,roughness:.18});
-const ceramic=new THREE.MeshPhysicalMaterial({color:0xf5f2ea,roughness:.2,clearcoat:1,clearcoatRoughness:.08,sheen:.5,sheenColor:new THREE.Color(0xeaf0ff)});
-const enamel=new THREE.MeshPhysicalMaterial({color:0xefe9dc,roughness:.28,clearcoat:.6,clearcoatRoughness:.18});
+const titanium=new THREE.MeshPhysicalMaterial({color:0xc2c9d1,metalness:1,roughness:.24,clearcoat:.3,clearcoatRoughness:.2});
+const abutMat=new THREE.MeshPhysicalMaterial({color:0xd6dce2,metalness:1,roughness:.16});
+const ceramic=new THREE.MeshPhysicalMaterial({color:0xe9e4d8,roughness:.22,clearcoat:1,clearcoatRoughness:.07,sheen:.5,sheenColor:new THREE.Color(0xeaf0ff),emissive:new THREE.Color(0xffffff),emissiveIntensity:0});
+const enamel=new THREE.MeshPhysicalMaterial({color:0xe2dac8,roughness:.3,clearcoat:.6,clearcoatRoughness:.18});
 const rootMat=new THREE.MeshStandardMaterial({color:0xe9dcbf,roughness:.55});
-const gumMat=new THREE.MeshPhysicalMaterial({vertexColors:true,roughness:.4,clearcoat:.6,clearcoatRoughness:.28,sheen:.8,sheenColor:new THREE.Color(0xffd0d0),sheenRoughness:.45,emissive:new THREE.Color(0x4a1a20),emissiveIntensity:.35,transparent:true,opacity:1,depthWrite:false,side:THREE.FrontSide});
+const gumMat=new THREE.MeshPhysicalMaterial({vertexColors:true,roughness:.4,clearcoat:.6,clearcoatRoughness:.28,sheen:.8,sheenColor:new THREE.Color(0xffd0d0),sheenRoughness:.45,emissive:new THREE.Color(0x4a1a20),emissiveIntensity:.3,transparent:true,opacity:.4,depthWrite:false});
+const holo=()=>new THREE.MeshBasicMaterial({color:new THREE.Color().setRGB(.55,.9,1.9),transparent:true,opacity:0,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending});
 
-/* ---------- coroa de molar ---------- */
+/* ---------- geometria: molar ---------- */
 function molarGeometry(){
   const g=new THREE.SphereGeometry(1,128,96);const p=g.attributes.position;const v=new THREE.Vector3();
   const cusps=[[.5,.45],[-.5,.45],[.5,-.45],[-.5,-.45]];
@@ -620,101 +634,131 @@ function molarGeometry(){
 const molar=molarGeometry();
 function rootGeometry(len,r){const pts=[new THREE.Vector2(0,-len-0.04)];for(let i=24;i>=0;i--){const t=i/24;pts.push(new THREE.Vector2(r*(1-0.8*Math.pow(t,1.3))+0.001,-t*len));}return new THREE.LatheGeometry(pts,40);}
 
-/* ---------- arcada: peça única e orgânica (gengiva translúcida que vira osso) ---------- */
-const HALF=3.7, NU=180, NV=120;
-const GUM=new THREE.Color(0xe98d93), GUM_DEEP=new THREE.Color(0xd96f78), BONE=new THREE.Color(0xf1e6cf);
-const TEETH_X=[-2.45,2.45];
+/* ---------- arcada orgânica ---------- */
+const HALF=3.7,NU=180,NV=120;
+const GUM=new THREE.Color(0xe98d93),GUM_DEEP=new THREE.Color(0xd96f78),BONE=new THREE.Color(0xf1e6cf);
 function jaw(u,v,out,col){
-  const x=L(-HALF,HALF,u);
-  const e=Math.pow(Math.sin(Math.PI*u),0.22);
-  const th=v*Math.PI*2, c=Math.cos(th), s=Math.sin(th);
-  const W=1.28, yc=-1.25;
+  const x=L(-HALF,HALF,u);const e=Math.pow(Math.sin(Math.PI*u),0.22);
+  const th=v*Math.PI*2,c=Math.cos(th),sn=Math.sin(th);const W=1.28,yc=-1.25;
   let z=W*Math.sign(c)*Math.pow(Math.abs(c),0.62);
-  let y=s>=0? yc+1.32*Math.pow(s,0.42) : yc-1.95*Math.pow(-s,0.32);
-  const top=ss(s,.35,1);
-  const ax=Math.abs(x);
-  let bump=0;
-  bump+=0.30*Math.exp(-((ax-1.25)**2)/0.045)*ss(1-Math.abs(z)/W,0,.6);   /* papilas entre os dentes */
-  bump-=0.03*Math.exp(-((ax-2.45)**2)/0.35);                            /* colo dos dentes */
-  bump-=0.06*Math.exp(-(x*x)/0.5);                                      /* rebordo onde falta o dente */
+  let y=sn>=0?yc+1.32*Math.pow(sn,0.42):yc-1.95*Math.pow(-sn,0.32);
+  const top=ss(sn,.35,1),ax=Math.abs(x);
+  let bump=0.30*Math.exp(-((ax-1.25)**2)/0.045)*ss(1-Math.abs(z)/W,0,.6)-0.03*Math.exp(-((ax-2.45)**2)/0.35)-0.06*Math.exp(-(x*x)/0.5);
   y+=bump*top;
   const n=0.014*Math.sin(x*6.1+z*3.7)*Math.sin(y*5.3+x*1.7);
-  z*=e;y=yc+(y-yc)*e;
-  out.set(x,y+n*top,z+n*Math.sign(c));
-  const g=ss(y,-1.75,-0.95);
-  col.copy(BONE).lerp(GUM,g);
+  z*=e;y=yc+(y-yc)*e;out.set(x,y+n*top,z+n*Math.sign(c));
+  const g=ss(y,-1.75,-0.95);col.copy(BONE).lerp(GUM,g);
   if(y>-0.2)col.lerp(GUM_DEEP,ss(Math.abs(z),0.6,1.1)*0.35);
   col.a=L(0.5,0.9,g);
 }
 function jawGeometry(){
   const pos=[],colr=[],idx=[];const pt=new THREE.Vector3(),c=new THREE.Color();
   for(let i=0;i<=NU;i++)for(let j=0;j<=NV;j++){jaw(i/NU,j/NV,pt,c);pos.push(pt.x,pt.y,pt.z);colr.push(c.r,c.g,c.b,c.a);}
-  const row=NV+1;
-  for(let i=0;i<NU;i++)for(let j=0;j<NV;j++){const a=i*row+j,b=a+row;idx.push(a,b,a+1,b,b+1,a+1);}
+  const row=NV+1;for(let i=0;i<NU;i++)for(let j=0;j<NV;j++){const a=i*row+j,b=a+row;idx.push(a,b,a+1,b,b+1,a+1);}
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(colr,4));g.setIndex(idx);g.computeVertexNormals();return g;
 }
-const gum=new THREE.Mesh(jawGeometry(),gumMat);gum.renderOrder=2;
-/* garante que a face de fora fica para fora */
-gum.geometry.computeBoundingSphere();
+const gum=new THREE.Mesh(jawGeometry(),gumMat);gum.receiveShadow=true;gum.renderOrder=2;
 
-/* ---------- dentes vizinhos ---------- */
-const NECK=-0.2;
-function natural(x,s){const t=new THREE.Group();const c=new THREE.Mesh(molar,enamel);c.scale.setScalar(s);c.position.y=NECK;
+const NECK=-0.38;
+function natural(x,s){const t=new THREE.Group();const c=new THREE.Mesh(molar,enamel);c.scale.setScalar(s);c.position.y=NECK;c.castShadow=c.receiveShadow=true;
   const r1=new THREE.Mesh(rootGeometry(2.3,.3),rootMat);r1.position.set(-.27*s,NECK+0.08,0);r1.rotation.z=-0.07;
   const r2=new THREE.Mesh(rootGeometry(2.4,.3),rootMat);r2.position.set(.27*s,NECK+0.08,0);r2.rotation.z=0.07;
   t.add(c,r1,r2);t.position.x=x;return t;}
-const nL=natural(TEETH_X[0],0.95),nR=natural(TEETH_X[1],0.97);
+const nL=natural(-2.45,0.95),nR=natural(2.45,0.97);
 
 /* ---------- implante, pilar, coroa ---------- */
 const H=2.4,R=0.4;const sp=[new THREE.Vector2(0,-H/2-0.1)];
 for(let i=0;i<=300;i++){const t=i/300;const y=-H/2+t*H;const taper=0.6+0.4*Math.min(1,t*2.4);const ph=(i%12)/12;const th=ph<.5?ph*2:(1-ph)*2;sp.push(new THREE.Vector2(t>0.93?R*0.92:R*taper*(0.78+0.22*th),y));}
 sp.push(new THREE.Vector2(R*0.92,H/2+0.05),new THREE.Vector2(0,H/2+0.05));
-const screw=new THREE.Mesh(new THREE.LatheGeometry(sp,64),titanium);
+const screwGeo=new THREE.LatheGeometry(sp,64);
+const screw=new THREE.Mesh(screwGeo,titanium);screw.castShadow=true;
 const ap=[new THREE.Vector2(0,0),new THREE.Vector2(.34,0),new THREE.Vector2(.4,.1),new THREE.Vector2(.4,.3),new THREE.Vector2(.29,.4),new THREE.Vector2(.25,.98),new THREE.Vector2(.17,1.08),new THREE.Vector2(0,1.1)];
-const abut=new THREE.Mesh(new THREE.LatheGeometry(ap,48),abutMat);
-const crown=new THREE.Mesh(molar,ceramic);crown.scale.setScalar(0.9);
+const abut=new THREE.Mesh(new THREE.LatheGeometry(ap,48),abutMat);abut.castShadow=true;
+const crown=new THREE.Mesh(molar,ceramic);crown.scale.setScalar(0.9);crown.castShadow=true;
+const SCREW_FINAL=-0.3-H/2,ABUT_FINAL=-0.4,CROWN_FINAL=NECK;
 
-/* guia do planejamento (sem wireframe, que cintila) */
-const SCREW_FINAL=-0.3-H/2;
-const guideMat=new THREE.MeshBasicMaterial({color:0x8fb0ff,transparent:true,opacity:0,depthWrite:false});
-const guide=new THREE.Mesh(new THREE.CylinderGeometry(R*1.06,R*0.72,H,48,1,true),guideMat);guide.position.y=SCREW_FINAL;guide.renderOrder=3;
-const axisMat=new THREE.MeshBasicMaterial({color:0x8fb0ff,transparent:true,opacity:0,depthWrite:false});
-const axis=new THREE.Mesh(new THREE.CylinderGeometry(.014,.014,6.2,8),axisMat);axis.position.y=0.6;axis.renderOrder=3;
-const ringMat=new THREE.MeshBasicMaterial({color:0x8fb0ff,transparent:true,opacity:0,depthWrite:false,side:THREE.DoubleSide});
-const ring=new THREE.Mesh(new THREE.RingGeometry(R*1.25,R*1.45,64),ringMat);ring.rotation.x=-Math.PI/2;ring.position.y=0.06;ring.renderOrder=3;
+/* ---------- planejamento: holograma, varredura, grade ---------- */
+const ghostScrew=new THREE.Mesh(screwGeo,holo());ghostScrew.position.y=SCREW_FINAL;ghostScrew.renderOrder=3;
+const ghostCrown=new THREE.Mesh(molar,holo());ghostCrown.scale.setScalar(0.9);ghostCrown.position.y=CROWN_FINAL;ghostCrown.renderOrder=3;
+const axisMat=holo();const axis=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,7,8),axisMat);axis.position.y=1.2;axis.renderOrder=3;
+const ringMat=holo();const ring=new THREE.Mesh(new THREE.RingGeometry(R*1.3,R*1.5,64),ringMat);ring.rotation.x=-Math.PI/2;ring.position.y=0.07;ring.renderOrder=3;
+const scanMat=new THREE.MeshBasicMaterial({color:new THREE.Color().setRGB(1.1,1.7,3.2),transparent:true,opacity:0,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending});
+const scan=new THREE.Mesh(new THREE.PlaneGeometry(6,7.5),scanMat);scan.rotation.y=Math.PI/2;scan.position.y=0.4;scan.renderOrder=4;
+const grid=new THREE.GridHelper(18,36,0x4b78c8,0x1f3a63);grid.position.y=-3.31;grid.material.transparent=true;grid.material.opacity=0;grid.material.depthWrite=false;
+const floor=new THREE.Mesh(new THREE.CircleGeometry(14,64),new THREE.ShadowMaterial({opacity:.42}));floor.rotation.x=-Math.PI/2;floor.position.y=-3.32;floor.receiveShadow=true;
 
-const group=new THREE.Group();group.add(nL,nR,screw,abut,crown,gum,guide,axis,ring);scene.add(group);
+/* ---------- partículas ---------- */
+const N=240,pp=new Float32Array(N*3);for(let i=0;i<N;i++){pp[i*3]=(Math.random()-.5)*20;pp[i*3+1]=-3+Math.random()*10;pp[i*3+2]=(Math.random()-.5)*14;}
+const dustGeo=new THREE.BufferGeometry();dustGeo.setAttribute('position',new THREE.BufferAttribute(pp,3));
+const dust=new THREE.Points(dustGeo,new THREE.PointsMaterial({color:0xbfd4ff,size:.06,transparent:true,opacity:.3,depthWrite:false,blending:THREE.AdditiveBlending}));
 
-/* ---------- câmera e tamanho ---------- */
+const group=new THREE.Group();group.add(nL,nR,screw,abut,crown,gum,ghostScrew,ghostCrown,axis,ring,scan,grid,floor);scene.add(group,dust);
+
+/* ---------- pós-processamento (bloom) ---------- */
+let composer=null,bloom=null;
+function buildComposer(){
+  if(composer){composer.dispose?.();composer=null;bloom=null;}
+  if(isMobile())return;
+  composer=new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene,camera));
+  bloom=new UnrealBloomPass(new THREE.Vector2(canvas.clientWidth||1,canvas.clientHeight||1),.22,.4,1.0);
+  composer.addPass(bloom);composer.addPass(new OutputPass());
+}
+let wasMobile=isMobile();
+function size(){
+  const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;
+  renderer.setPixelRatio(DPR());renderer.setSize(w,h,false);
+  const m=isMobile();if(m!==wasMobile){wasMobile=m;buildComposer();}
+  camera.aspect=w/h;camera.setViewOffset(w,h,m?0:w*0.21,m?h*0.17:0,w,h);camera.updateProjectionMatrix();
+  if(composer){composer.setSize(w,h);composer.setPixelRatio(DPR());}
+}
+buildComposer();new ResizeObserver(size).observe(canvas);size();
+
+/* ---------- coreografia ---------- */
 let mx=0,my=0;addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5);},{passive:true});
-function size(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
-new ResizeObserver(size).observe(canvas);size();
-
-const ABUT_FINAL=-0.4, CROWN_FINAL=NECK;
+const cam={r:19,th:-0.55,h:3.0,ty:-0.6};
+const target=new THREE.Vector3();
 let cur=0,last=performance.now();
 function frame(now){
   const dt=Math.min((now-last)/1000,0.1);last=now;const t=now/1000;
-  cur+=(window.__implantP-cur)*(1-Math.exp(-dt*7));const P=cur;
-  const mob=innerWidth<860;
-  const s1=sm(cl(P/0.25)),s2=sm(cl((P-0.30)/0.32)),s3a=sm(cl((P-0.62)/0.16)),s3b=sm(cl((P-0.74)/0.2));
-  const g=s1*(1-s2);
-  guideMat.opacity=0.22*g;axisMat.opacity=0.55*g;ringMat.opacity=0.7*s1*(1-s3a);
-  screw.position.y=L(3.0,SCREW_FINAL,s2);screw.rotation.y=-s2*Math.PI*7;
-  abut.position.y=L(7.5,ABUT_FINAL,s3a);
-  crown.position.y=L(9,CROWN_FINAL,s3b);crown.rotation.y=(1-s3b)*0.8;
-  group.position.set(mob?0:-4.0,mob?1.3:-0.4,0);
-  group.scale.setScalar(mob?0.64:0.8);
-  group.rotation.y=-0.38+0.1*Math.sin(t*0.3)+mx*0.3;
-  group.rotation.x=0.24+my*0.1;
-  camera.position.set(0,mob?2.2:1.6,mob?24:L(19,17.5,P));
-  camera.lookAt(group.position.x*0.15,group.position.y*0.6,0);
-  renderer.render(scene,camera);
+  cur+=(window.__implantP-cur)*(1-Math.exp(-dt*7));const P=cur;const mob=isMobile();
+  const a=ss(P,0,0.28),b=ss(P,0.30,0.62),c=ss(P,0.62,0.95);
+  const s1=ss(P,0,0.22),s2=ss(P,0.30,0.62),s3a=ss(P,0.64,0.78),s3b=ss(P,0.76,0.95);
+  /* câmera: plano aberto → aproxima no implante → recua e orbita para o lado oposto */
+  let r=L(27,25,a);r=L(r,16,b);r=L(r,21,c);
+  let th=L(-0.55,-0.42,a);th=L(th,-0.1,b);th=L(th,0.48,c);
+  let h=L(4.2,3.6,a);h=L(h,1.8,b);h=L(h,3.2,c);
+  let ty=L(-0.6,-0.6,a);ty=L(ty,-0.15,b);ty=L(ty,-0.5,c);
+  if(mob)r*=1.35;
+  th+=0.05*Math.sin(t*0.25)+mx*0.22;h+=0.08*Math.sin(t*0.4)+my*0.5;
+  const k=1-Math.exp(-dt*5);
+  cam.r+=(r-cam.r)*k;cam.th+=(th-cam.th)*k;cam.h+=(h-cam.h)*k;cam.ty+=(ty-cam.ty)*k;
+  camera.position.set(cam.r*Math.sin(cam.th),cam.ty+cam.h,cam.r*Math.cos(cam.th));
+  target.set(0,cam.ty,0);camera.lookAt(target);
+  /* planejamento: varredura, grade e holograma */
+  const plan=s1*(1-ss(P,0.24,0.32));
+  scan.position.x=L(-4.6,4.6,ss(P,0.01,0.2));scanMat.opacity=0.12*s1*(1-ss(P,0.18,0.24));
+  grid.material.opacity=0.5*plan;
+  ghostScrew.material.opacity=0.22*plan;ghostCrown.material.opacity=0.12*plan;axisMat.opacity=0.6*plan;ringMat.opacity=0.8*s1*(1-s3a);
+  /* gengiva: raio-x no planejamento, opaca e saudável no final */
+  gumMat.opacity=L(L(0.4,0.55,s2),0.97,s3a);
+  /* implante */
+  screw.position.y=L(3.4,SCREW_FINAL,s2);screw.rotation.y=-s2*Math.PI*7;
+  /* prótese */
+  abut.position.y=L(6.5,ABUT_FINAL,s3a);
+  crown.position.y=L(8,CROWN_FINAL,s3b);crown.rotation.y=(1-s3b)*0.9;crown.scale.setScalar(0.9*(1+0.05*(1-s3b)));
+  const glint=Math.exp(-Math.pow((P-0.95)/0.035,2));ceramic.emissiveIntensity=0.28*glint;
+  /* luz esquenta quando o sorriso fica pronto */
+  key.intensity=L(1.6,2.2,s3a);key.color.copy(KEY_COOL).lerp(KEY_WARM,s3a);renderer.toneMappingExposure=L(0.9,1.0,s3a);
+  dust.rotation.y+=dt*0.02;dust.position.y=Math.sin(t*0.2)*0.15;
+  if(composer)composer.render();else renderer.render(scene,camera);
 }
-/* compila os shaders antes de aparecer, para não travar no primeiro quadro */
 renderer.compile(scene,camera);
 let running=false;
-new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!running){last=performance.now();renderer.setAnimationLoop(frame);running=true;}else if(!v&&running){renderer.setAnimationLoop(null);running=false;}},{rootMargin:'150px'}).observe(canvas);
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){renderer.setAnimationLoop(null);running=false;}});
+const start=()=>{if(running)return;last=performance.now();renderer.setAnimationLoop(frame);running=true;};
+const stop=()=>{if(!running)return;renderer.setAnimationLoop(null);running=false;};
+new IntersectionObserver(es=>{es[0].isIntersecting?start():stop();},{rootMargin:'150px'}).observe(canvas);
+document.addEventListener('visibilitychange',()=>{document.hidden?stop():null;});
 })();
 </script>
 </body>
