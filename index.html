@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DenteBello | Implantes e Estética Dental em Palmas–TO</title>
 <meta name="description" content="DenteBello: implantodontia e estética oral em Palmas–TO desde 1992. Planejamento digital, formação USP e Unesp. Agende sua avaliação.">
+<script>(function(){try{var c=document.createElement('canvas');var g=c.getContext('webgl')||c.getContext('experimental-webgl');if(!g){document.documentElement.classList.add('gpu-lite');return;}var d=g.getExtension('WEBGL_debug_renderer_info');var r=d?String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)):'';if(/SwiftShader|Basic Render|llvmpipe|Software|Mesa OffScreen/i.test(r))document.documentElement.classList.add('gpu-lite');var e=g.getExtension('WEBGL_lose_context');e&&e.loseContext();}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -246,7 +247,7 @@ p{text-wrap:pretty}
 .grid-bg{position:relative}
 .grid-bg::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(143,176,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(143,176,255,.07) 1px,transparent 1px);background-size:72px 72px;background-position:center;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 40%,#000 15%,transparent 80%);mask-image:radial-gradient(ellipse 75% 70% at 50% 40%,#000 15%,transparent 80%)}
 .grid-bg>*{position:relative;z-index:1}
-body::after{content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero__frame{box-shadow:0 0 0 1px rgba(29,78,216,.16),0 50px 90px -50px rgba(10,21,34,.55)}
 .dark .btn{box-shadow:0 0 0 1px rgba(143,176,255,.22),0 14px 34px -14px rgba(29,78,216,.75)}
 .dark .btn:hover{box-shadow:0 0 0 1px rgba(143,176,255,.4),0 18px 40px -14px rgba(29,78,216,.9)}
@@ -271,6 +272,16 @@ body::after{content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;o
 /* números */
 .stat{border-top-color:rgba(143,176,255,.35)}
 @media (max-width:760px){.hero__title .eyebrow{font-size:11px;margin-bottom:18px}.wm svg{opacity:.55}.wm{width:70vw!important}}
+
+
+/* ---------- modo leve: Chrome sem aceleração de vídeo ---------- */
+.gpu-lite body::after{display:none}
+.gpu-lite .nav.is-solid{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(242,244,243,.97)}
+.gpu-lite .why.dark .why__list li{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.05)}
+.gpu-lite .wm--line svg{filter:none}
+.gpu-lite .grid-bg::before{display:none}
+.gpu-lite .implant__stage::after{display:none}
+.gpu-lite .hero__img{transition:none}
 
 /* ---------- whatsapp flutuante ---------- */
 .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4);transform:scale(0);transition:transform .5s var(--ease)}
@@ -658,7 +669,7 @@ const isMobile=()=>innerWidth<860;
 let renderer;
 try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});}catch(e){canvas.style.display='none';return;}
 const _gl=renderer.getContext(),_dbg=_gl.getExtension('WEBGL_debug_renderer_info'),_rn=_dbg?String(_gl.getParameter(_dbg.UNMASKED_RENDERER_WEBGL)):'';
-const LITE=/SwiftShader|Basic Render|llvmpipe|Software|Mesa OffScreen/i.test(_rn)||(navigator.hardwareConcurrency||8)<=4;
+const LITE=document.documentElement.classList.contains('gpu-lite')||/SwiftShader|Basic Render|llvmpipe|Software|Mesa OffScreen/i.test(_rn)||(navigator.hardwareConcurrency||8)<=4;
 window.__implantMode=LITE?'lite':'full';
 const DPR=()=>LITE?Math.min(devicePixelRatio||1,0.6):Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
 renderer.setPixelRatio(DPR());
