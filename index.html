@@ -94,7 +94,7 @@ p{text-wrap:pretty}
 
 /* ---------- implante 3D (pico) ---------- */
 .dark{background:var(--deep);color:#EEF2F6}
-.implant{position:relative;height:420vh}
+.implant{position:relative;height:360vh}
 .implant__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-columns:57fr 43fr;align-items:center}
 #implant-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .implant__stage::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse 70% 80% at 36% 50%,transparent 40%,rgba(10,21,34,.62) 100%)}
@@ -125,6 +125,7 @@ p{text-wrap:pretty}
 .why__head p{color:var(--ink-soft);max-width:46ch;font-size:18px;justify-self:end}
 .why__body{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
 .why__img{border-radius:24px;overflow:hidden;position:sticky;top:110px;aspect-ratio:4/5}
+.why.dark .why__img{position:sticky}
 .why__img img{width:100%;height:100%;object-fit:cover;object-position:19% 50%}
 .why__list{list-style:none}
 .why__list li{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:34px 0;border-top:1px solid rgba(15,28,43,.12)}
@@ -228,6 +229,49 @@ p{text-wrap:pretty}
 .dark .map__card .btn--ghost{color:var(--ink);box-shadow:inset 0 0 0 1px rgba(15,28,43,.25)}
 @media (max-width:700px){.map{height:auto;overflow:visible;background:none}.map iframe,.map__ph{position:relative;display:block;height:240px;border-radius:24px;overflow:hidden}.map__card{position:relative;inset:auto;margin-top:12px;max-width:none}}
 
+
+/* ---------- sistema visual: marca d'água, grão, grade, transições ---------- */
+.wm{position:absolute;pointer-events:none;z-index:0;will-change:transform}
+.wm svg{display:block;width:100%;height:auto;overflow:visible;aspect-ratio:1120/1344}
+.wm--fill svg{fill:currentColor;stroke:none}
+.wm--line svg{fill:none;stroke:currentColor;stroke-width:1.2;filter:drop-shadow(0 0 18px rgba(143,176,255,.25))}
+.has-wm{position:relative;overflow:clip}
+.has-wm>:not(.wm){position:relative;z-index:1}
+.hero__stage>.wm{z-index:0}
+.eyebrow{display:flex;align-items:center;gap:14px;font:500 12px/1 var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+.dark .eyebrow{color:var(--cobalt-light)}
+.hero__title .eyebrow{margin-bottom:28px;pointer-events:none;opacity:var(--to,1)}
+.fade{height:clamp(72px,10vw,150px);background:linear-gradient(180deg,var(--a),var(--b));position:relative;z-index:1}
+.grid-bg{position:relative}
+.grid-bg::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(143,176,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(143,176,255,.07) 1px,transparent 1px);background-size:72px 72px;background-position:center;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 40%,#000 15%,transparent 80%);mask-image:radial-gradient(ellipse 75% 70% at 50% 40%,#000 15%,transparent 80%)}
+.grid-bg>*{position:relative;z-index:1}
+body::after{content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero__frame{box-shadow:0 0 0 1px rgba(29,78,216,.16),0 50px 90px -50px rgba(10,21,34,.55)}
+.dark .btn{box-shadow:0 0 0 1px rgba(143,176,255,.22),0 14px 34px -14px rgba(29,78,216,.75)}
+.dark .btn:hover{box-shadow:0 0 0 1px rgba(143,176,255,.4),0 18px 40px -14px rgba(29,78,216,.9)}
+/* por que: bloco escuro com cartões de vidro */
+.why.dark .why__head h2,.why.dark .why__list h3{color:#fff}
+.why.dark .why__head p,.why.dark .why__list p{color:rgba(238,242,246,.74)}
+.why.dark .why__list li{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:20px;padding:30px 30px 30px 26px;margin-bottom:14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .45s var(--ease),background .45s var(--ease),transform .45s var(--ease)}
+.why.dark .why__list li:last-child{border-bottom:1px solid rgba(255,255,255,.08)}
+.why.dark .why__list li:hover{border-color:rgba(143,176,255,.45);background:rgba(143,176,255,.07);transform:translateY(-3px)}
+.why.dark .why__list svg{stroke:var(--cobalt-light)}
+.why.dark .why__img{outline:1px solid rgba(143,176,255,.28);outline-offset:12px;border-radius:20px}
+.why.dark .why__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,21,34,0) 55%,rgba(10,21,34,.55));pointer-events:none}
+.why__img{position:sticky}
+/* especialidades numeradas */
+.spec__list{counter-reset:s}
+.spec__list li{justify-content:flex-start;gap:18px}
+.spec__list li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:500 12px/1 var(--text);letter-spacing:.12em;color:var(--cobalt);flex:none;transform:translateY(-.5em)}
+/* equipe: moldura em linha fina */
+.doc__img{outline:1px solid rgba(29,78,216,.18);outline-offset:12px;border-radius:20px}
+/* depoimentos: título */
+.voices__h{font-size:clamp(34px,4vw,60px);line-height:1;margin-bottom:clamp(48px,6vw,90px);max-width:14ch}
+/* números */
+.stat{border-top-color:rgba(143,176,255,.35)}
+@media (max-width:760px){.hero__title .eyebrow{font-size:11px;margin-bottom:18px}.wm svg{opacity:.55}.wm{width:70vw!important}}
+
 /* ---------- whatsapp flutuante ---------- */
 .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4);transform:scale(0);transition:transform .5s var(--ease)}
 .wa.is-on{transform:scale(1)}
@@ -255,6 +299,7 @@ p{text-wrap:pretty}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="tooth" viewBox="0 0 1120 1344"><path d="M0.0 672.0 L0.0 0.0L285.7 0.0 C567.0 0.0 571.3 0.0 569.6 1.9 C568.6 3.0 564.3 5.1 560.0 6.6 C550.7 9.8 544.3 14.4 537.7 22.5 C526.0 37.1 522.9 52.8 527.6 73.9 C529.9 84.3 534.3 91.2 544.2 100.2 L553.0 108.3L553.0 113.9 C552.9 129.4 544.3 161.0 536.6 174.0 C531.1 183.4 515.3 201.1 508.0 206.1 C487.9 219.9 460.5 223.8 439.3 215.8 C416.7 207.4 382.0 170.6 382.0 155.0 C382.0 152.2 383.4 147.7 386.1 141.7 C393.6 125.1 393.5 112.0 386.0 96.4 C376.9 77.7 360.1 67.0 339.7 67.0 C323.4 67.0 311.3 71.7 301.0 81.9 C290.2 92.8 286.0 103.2 286.0 119.5 C286.0 130.8 287.7 137.2 293.0 146.1 C300.8 159.3 310.7 166.6 325.3 170.0 C335.7 172.4 338.3 173.7 340.6 178.1 C342.7 182.3 348.4 200.5 350.9 211.0 C352.0 215.7 354.2 222.4 355.8 226.0 C357.4 229.6 360.8 239.2 363.4 247.5 C377.2 291.8 379.7 297.9 386.4 303.6 C392.7 309.0 398.9 310.7 425.2 314.0 C510.2 324.8 657.6 324.6 742.5 313.6 C753.5 312.1 764.6 310.3 767.2 309.4 C772.3 307.8 780.3 301.3 782.4 297.1 C784.1 293.9 790.6 273.9 795.5 257.0 C799.0 244.9 807.8 216.9 812.6 202.5 C813.9 198.7 815.9 192.2 817.0 188.2 C820.4 176.5 823.0 174.3 838.3 169.9 C848.2 167.1 858.0 160.4 865.5 151.3 C884.0 128.9 879.1 96.8 854.4 78.1 C831.4 60.7 806.4 62.2 786.7 82.1 C778.4 90.5 775.3 95.9 772.5 106.5 C769.4 118.7 771.7 134.4 778.5 146.6 C780.4 150.0 782.0 154.1 782.0 155.7 C782.0 161.6 772.5 174.6 756.0 191.2 C741.7 205.6 739.8 207.2 732.0 210.9 C706.6 223.0 679.0 222.3 658.9 209.2 C644.3 199.7 631.8 185.5 623.6 169.2 C614.5 151.1 608.2 117.2 612.4 109.2 C613.2 107.7 616.8 103.9 620.4 100.7 C635.2 87.6 641.2 71.6 638.9 51.3 C636.8 32.4 622.3 13.5 604.0 6.1 C587.8 -0.5 566.2 0.0 856.8 0.0 L1120.0 0.0L1120.0 672.0 L1120.0 1344.0L560.0 1344.0 L0.0 1344.0L0.0 672.0 Z M328.0 1341.0 C329.9 1340.4 337.2 1338.6 344.1 1337.0 C362.1 1332.9 371.9 1327.7 388.9 1313.0 C398.9 1304.4 422.0 1276.2 432.0 1260.5 C436.9 1252.8 446.1 1238.6 452.4 1229.0 C458.7 1219.4 466.4 1207.2 469.6 1202.0 C479.9 1184.9 501.6 1156.6 511.5 1147.2 C529.7 1130.0 548.0 1123.7 567.0 1128.1 C586.2 1132.5 609.5 1156.2 633.9 1196.0 C645.4 1214.9 655.2 1231.6 658.9 1239.0 C661.3 1243.7 665.8 1251.8 668.8 1257.0 C698.8 1308.6 720.7 1328.1 759.0 1337.5 C776.6 1341.8 777.7 1341.8 797.1 1337.6 C823.9 1331.8 841.9 1322.0 865.8 1300.3 C884.2 1283.6 911.2 1242.4 932.0 1199.5 C935.4 1192.3 939.1 1185.3 940.1 1183.8 C941.2 1182.3 944.7 1175.1 948.1 1167.8 C951.4 1160.5 955.2 1152.2 956.5 1149.5 C963.6 1134.8 973.7 1112.5 976.5 1105.0 C980.2 1095.5 986.1 1081.6 989.0 1075.5 C991.4 1070.6 1004.1 1038.8 1008.6 1026.5 C1014.9 1009.3 1023.8 983.4 1026.3 975.5 C1027.6 971.1 1030.5 963.0 1032.5 957.5 C1036.1 948.2 1042.1 930.2 1052.4 898.0 C1062.1 867.9 1066.8 851.9 1072.0 831.5 C1073.6 825.5 1075.5 818.6 1076.4 816.3 C1077.2 814.0 1079.1 806.8 1080.5 800.3 C1081.9 793.8 1084.2 784.9 1085.5 780.5 C1088.1 771.4 1091.3 757.9 1096.4 734.0 C1112.9 656.1 1118.1 579.1 1111.0 519.5 C1110.4 514.5 1109.5 508.9 1109.0 507.0 C1108.5 505.1 1106.9 497.9 1105.5 491.1 C1100.4 466.8 1094.0 451.6 1077.7 424.5 C1065.7 404.6 1059.6 396.3 1048.1 385.1 C1015.8 353.4 983.2 337.3 930.0 326.6 C887.2 318.0 837.6 321.9 770.5 339.0 C685.1 360.9 613.7 369.2 550.5 364.6 C508.5 361.5 447.9 353.2 429.0 347.9 C424.9 346.8 417.4 345.0 412.5 343.9 C407.6 342.9 398.3 340.7 392.0 339.0 C360.2 330.7 323.7 325.3 283.5 322.9 C235.7 320.1 182.4 327.7 150.4 341.9 C128.1 351.8 124.2 353.9 111.0 362.5 C76.3 385.2 54.8 409.4 34.1 449.2 C25.2 466.3 21.4 477.3 14.1 507.0 C9.7 525.2 8.8 530.9 6.4 558.0 C4.6 578.1 4.9 621.1 6.9 644.5 C7.5 651.1 8.5 662.1 9.1 669.0 C10.4 683.7 16.3 724.6 19.0 737.5 C20.1 742.5 22.1 753.2 23.4 761.5 C24.8 769.8 26.6 778.8 27.4 781.5 C28.2 784.2 29.8 791.2 31.0 797.0 C32.1 802.8 34.6 812.7 36.4 819.0 C38.3 825.3 41.6 837.5 43.9 846.0 C46.2 854.5 49.4 865.8 51.0 871.0 C52.6 876.2 54.6 883.6 55.5 887.5 C56.4 891.4 58.8 899.9 60.9 906.5 C63.0 913.1 66.2 923.9 68.0 930.5 C69.7 937.1 72.3 945.6 73.7 949.5 C75.1 953.4 78.9 964.6 82.2 974.5 C85.4 984.4 89.8 997.0 91.9 1002.5 C94.0 1008.0 97.6 1017.9 99.9 1024.5 C102.3 1031.1 105.7 1040.5 107.6 1045.5 C109.4 1050.5 112.8 1059.7 115.1 1066.0 C119.2 1077.5 127.6 1099.2 134.8 1117.0 C137.0 1122.2 141.7 1132.7 145.4 1140.2 C149.0 1147.7 152.0 1154.2 152.0 1154.6 C152.0 1156.2 170.8 1196.0 181.0 1216.1 C183.7 1221.3 189.0 1230.8 192.9 1237.1 C196.7 1243.4 201.5 1251.4 203.7 1254.9 C220.8 1283.4 245.4 1311.0 263.1 1321.5 C274.4 1328.2 286.9 1333.4 298.7 1336.5 C304.1 1337.8 310.5 1339.6 313.0 1340.4 C318.5 1342.2 323.3 1342.3 328.0 1341.0 Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></symbol></svg>
 
 <header class="nav" id="nav">
   <a class="nav__logo" href="#inicio" aria-label="DenteBello, início"><img src="images/logo.png" alt="DenteBello Odontologia Premium" width="132" height="44"></a>
@@ -272,7 +317,9 @@ p{text-wrap:pretty}
 <!-- HERO -->
 <section class="hero" id="inicio" aria-label="Apresentação">
   <div class="hero__stage">
+    <div class="wm wm--line" data-speed="-60" data-rot="-8" aria-hidden="true" style="left:-6vw;bottom:-18vh;width:46vw;color:var(--cobalt);opacity:.22"><svg><use href="#tooth"/></svg></div>
     <div class="hero__title">
+      <p class="eyebrow">Implante &amp; Estética Oral · Palmas–TO · desde 1992</p>
       <h1><span>Sorrir bem</span><span class="r">é uma decisão.</span></h1>
     </div>
     <p class="hero__lede">Implantodontia e estética oral em Palmas desde 1992. Planejamento digital, formação na USP e na Unesp, e um atendimento que não tem pressa.</p>
@@ -289,11 +336,14 @@ p{text-wrap:pretty}
   </div>
 </section>
 
+<div class="fade" style="--a:#0A1522;--b:var(--porcelain)"></div>
 <!-- HISTÓRIA -->
-<section class="story wrap" id="sobre">
+<section class="story wrap has-wm" id="sobre">
+  <div class="wm wm--fill" data-speed="70" data-rot="10" aria-hidden="true" style="right:-12vw;top:-6vw;width:52vw;color:var(--ink);opacity:.035"><svg><use href="#tooth"/></svg></div>
   <div class="story__grid">
     <div class="story__year rv" aria-hidden="true"><span id="year">1992</span><small>Um dos primeiros consultórios odontológicos de Palmas. A cidade tinha três anos.</small></div>
     <div>
+      <p class="eyebrow rv">01 · Desde 1992</p>
       <h2 class="rv">Três décadas. Uma mesma forma de cuidar.</h2>
       <p class="rv">A DenteBello abriu as portas em 1992, quando Palmas ainda era uma cidade em construção. Cresceu com ela, e hoje recebe os filhos dos primeiros pacientes. São mais de trinta anos devolvendo função, saúde e beleza ao sorriso de milhares de famílias tocantinenses.</p>
       <p class="rv">A especialidade da casa é a reabilitação com implantes e a estética oral. Cada caso nasce de um planejamento digital, com radiografia e escaneamento intraoral, e é conduzido por profissionais formados na USP–Bauru e na Unesp–Araçatuba, com fellowship em Jönköping, na Suécia.</p>
@@ -303,11 +353,13 @@ p{text-wrap:pretty}
   <div class="story__photo" id="storyPhoto"><img src="images/estrutura.jpg" alt="Estrutura interna da clínica DenteBello" width="1600" height="900" loading="lazy"></div>
 </section>
 
+<div class="fade" style="--a:var(--porcelain);--b:#0A1522"></div>
 <!-- IMPLANTE 3D -->
 <section class="implant dark" id="implante" aria-label="Como funciona o implante">
   <div class="implant__stage">
     <canvas id="implant-canvas" aria-hidden="true"></canvas>
     <div class="implant__intro">
+      <p class="eyebrow rv">02 · Implantes</p>
       <h2 class="rv">A cirurgia é a parte mais curta de um implante.</h2>
     </div>
     <div class="implant__steps">
@@ -332,9 +384,12 @@ p{text-wrap:pretty}
 </section>
 
 <!-- POR QUE -->
-<section class="why wrap" id="porque">
+<section class="why dark grid-bg has-wm" id="porque">
+  <div class="wm wm--line" data-speed="-50" data-rot="6" aria-hidden="true" style="right:-10vw;top:4vw;width:44vw;color:var(--cobalt-light);opacity:.18"><svg><use href="#tooth"/></svg></div>
+ <div class="wrap">
   <div class="why__head">
-    <h2 class="rv">Tecnologia a serviço de um atendimento sem pressa.</h2>
+    <div><p class="eyebrow rv">03 · Diferenciais</p>
+    <h2 class="rv">Tecnologia a serviço de um atendimento sem pressa.</h2></div>
     <p class="rv">Equipamento de ponta importa. Importa mais quem o opera, e quanto tempo dedica a você.</p>
   </div>
   <div class="why__body">
@@ -346,12 +401,16 @@ p{text-wrap:pretty}
       <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><h3>Biossegurança e longo prazo</h3><p>Protocolos rigorosos de esterilização e casos acompanhados por anos, não por semanas.</p></div></li>
     </ul>
   </div>
+ </div>
 </section>
+<div class="fade" style="--a:#0A1522;--b:var(--enamel)"></div>
 
 <!-- ESPECIALIDADES -->
-<section class="spec" id="tratamentos">
+<section class="spec has-wm" id="tratamentos">
+  <div class="wm wm--fill" data-speed="60" data-rot="-6" aria-hidden="true" style="left:-14vw;bottom:-10vw;width:48vw;color:var(--ink);opacity:.04"><svg><use href="#tooth"/></svg></div>
   <div class="wrap spec__grid">
     <div class="spec__side">
+      <p class="eyebrow rv">04 · Tratamentos</p>
       <h2 class="rv">Toda a odontologia, sob um mesmo planejamento.</h2>
       <p class="rv">Da prevenção à reabilitação completa. Uma equipe multidisciplinar na mesma clínica, para que o seu caso seja pensado inteiro, e não em partes.</p>
       <a class="btn rv" href="#contato">Agendar avaliação</a>
@@ -373,12 +432,14 @@ p{text-wrap:pretty}
   </div>
 </section>
 
+<div class="fade" style="--a:var(--enamel);--b:#0A1522"></div>
 <!-- RESULTADOS -->
 <div class="dark" id="resultados">
 <section class="results" aria-label="Resultados">
   <div class="results__stage">
     <div class="results__head">
-      <h2>O que muda quando você volta a sorrir.</h2>
+      <div><p class="eyebrow">05 · Sorrisos</p>
+      <h2>O que muda quando você volta a sorrir.</h2></div>
       <p>Mais do que dentes: a vontade de rir sem a mão na boca, de comer o que gosta, de conversar sem receio.<br><small style="opacity:.6">Imagens ilustrativas.</small></p>
     </div>
     <div class="results__track" id="track">
@@ -398,8 +459,11 @@ p{text-wrap:pretty}
 </div>
 </div>
 
+<div class="fade" style="--a:#0A1522;--b:var(--porcelain)"></div>
 <!-- EQUIPE -->
-<section class="team wrap" id="equipe">
+<section class="team wrap has-wm" id="equipe">
+  <div class="wm wm--line" data-speed="-40" data-rot="8" aria-hidden="true" style="right:-8vw;top:-4vw;width:40vw;color:var(--cobalt);opacity:.16"><svg><use href="#tooth"/></svg></div>
+  <p class="eyebrow rv">06 · Equipe</p>
   <h2 class="rv">Quem vai cuidar de você.</h2>
   <div class="team__grid">
     <article class="doc rv">
@@ -418,7 +482,9 @@ p{text-wrap:pretty}
 </section>
 
 <!-- DEPOIMENTOS -->
-<section class="voices" id="depoimentos" aria-label="Depoimentos">
+<section class="voices has-wm" id="depoimentos" aria-label="Depoimentos">
+  <div class="wm wm--fill" data-speed="50" data-rot="-10" aria-hidden="true" style="left:-10vw;top:10vw;width:38vw;color:var(--ink);opacity:.04"><svg><use href="#tooth"/></svg></div>
+  <div class="wrap"><p class="eyebrow rv">07 · Histórias reais</p><h2 class="voices__h rv">Quem já passou por aqui.</h2></div>
   <div class="wrap voices__list">
     <figure class="quote rv">
       <blockquote>A escolha da DenteBello foi por ser o primeiro consultório aqui de Palmas, onde levei os meus filhos para tratamento há 25 anos. Fui muito bem acolhida e o tratamento de implante teve um resultado melhor do que eu esperava. Recebo elogios sempre, pois todos dizem que ficou bem natural.</blockquote>
@@ -431,11 +497,14 @@ p{text-wrap:pretty}
   </div>
 </section>
 
+<div class="fade" style="--a:var(--enamel);--b:#0A1522"></div>
 <!-- CONTATO -->
-<section class="contact dark" id="contato">
+<section class="contact dark grid-bg has-wm" id="contato">
+  <div class="wm wm--fill" data-speed="40" data-rot="6" aria-hidden="true" style="right:-10vw;bottom:-6vw;width:46vw;color:#fff;opacity:.045"><svg><use href="#tooth"/></svg></div>
   <div class="wrap">
     <div class="contact__grid">
       <div>
+        <p class="eyebrow rv">08 · Contato</p>
         <h2 class="rv">Vamos conversar sobre o seu sorriso.</h2>
         <p class="contact__lede rv">Conte o que te incomoda. A primeira conversa é pelo WhatsApp, e a avaliação acontece na clínica, com calma e sem compromisso.</p>
         <div class="info">
@@ -519,6 +588,11 @@ p{text-wrap:pretty}
     const f=document.createElement('iframe');f.title='Mapa da DenteBello no Google Maps';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';
     f.src='https://www.google.com/maps?q=DenteBello%2C+Qd+104+Norte%2C+Rua+NE+05%2C+Lote+48%2C+Palmas+-+TO%2C+77006-020&z=16&output=embed';m.insertBefore(f,m.querySelector('.map__card'));})();
 
+
+  /* marcas d'água com parallax */
+  const wms=[...document.querySelectorAll('.wm')];
+  function parallax(){const vh=innerHeight;for(const w of wms){const r=w.parentElement.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)continue;const p=(r.top+r.height/2-vh/2)/vh;w.style.transform=`translate3d(0,${(p*(parseFloat(w.dataset.speed)||60)).toFixed(1)}px,0) rotate(${w.dataset.rot||0}deg)`;}}
+
   /* nav e whatsapp */
   const nav=document.getElementById('nav'),wa=document.getElementById('wa');
 
@@ -534,6 +608,7 @@ p{text-wrap:pretty}
     const y=scrollY;
     nav.classList.toggle('is-solid',y>innerHeight*1.4);
     wa.classList.toggle('is-on',y>innerHeight*.8);
+    parallax();
     if(reduce)return;
     /* hero: moldura se abre até tela cheia */
     const hp=prog(hero), a=ease(clamp(hp/0.62)), b=clamp((hp-0.55)/0.35);
@@ -582,11 +657,11 @@ const canvas=document.getElementById('implant-canvas');
 const isMobile=()=>innerWidth<860;
 let renderer;
 try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});}catch(e){canvas.style.display='none';return;}
-const DPR=()=>Math.min(devicePixelRatio||1,isMobile()?1.5:2);
+const DPR=()=>Math.min(devicePixelRatio||1,isMobile()?1.25:1.5);
 renderer.setPixelRatio(DPR());
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
-renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;
 canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Animação 3D: planejamento digital, colocação do implante de titânio e encaixe da coroa de cerâmica');
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();canvas.style.display='none';});
 
@@ -598,7 +673,7 @@ const camera=new THREE.PerspectiveCamera(28,1,0.5,80);
 
 /* ---------- luz de estúdio ---------- */
 const key=new THREE.DirectionalLight(0xeef3ff,1.6);key.position.set(4,7,6);key.castShadow=true;
-key.shadow.mapSize.set(2048,2048);key.shadow.camera.near=1;key.shadow.camera.far=30;
+key.shadow.mapSize.set(1024,1024);key.shadow.camera.near=1;key.shadow.camera.far=30;
 key.shadow.camera.left=-7;key.shadow.camera.right=7;key.shadow.camera.top=7;key.shadow.camera.bottom=-7;key.shadow.bias=-0.0004;key.shadow.normalBias=0.03;key.shadow.radius=4;
 const fill=new THREE.DirectionalLight(0x9db8ff,.55);fill.position.set(-5,2,5);
 const rim=new THREE.DirectionalLight(0xbfd4ff,1.7);rim.position.set(-4,4,-6);
@@ -617,7 +692,7 @@ const holo=()=>new THREE.MeshBasicMaterial({color:new THREE.Color().setRGB(.55,.
 
 /* ---------- geometria: molar ---------- */
 function molarGeometry(){
-  const g=new THREE.SphereGeometry(1,128,96);const p=g.attributes.position;const v=new THREE.Vector3();
+  const g=new THREE.SphereGeometry(1,96,72);const p=g.attributes.position;const v=new THREE.Vector3();
   const cusps=[[.5,.45],[-.5,.45],[.5,-.45],[-.5,-.45]];
   for(let i=0;i<p.count;i++){
     v.fromBufferAttribute(p,i);
@@ -635,7 +710,7 @@ const molar=molarGeometry();
 function rootGeometry(len,r){const pts=[new THREE.Vector2(0,-len-0.04)];for(let i=24;i>=0;i--){const t=i/24;pts.push(new THREE.Vector2(r*(1-0.8*Math.pow(t,1.3))+0.001,-t*len));}return new THREE.LatheGeometry(pts,40);}
 
 /* ---------- arcada orgânica ---------- */
-const HALF=3.7,NU=180,NV=120;
+const HALF=3.7,NU=140,NV=96;
 const GUM=new THREE.Color(0xe98d93),GUM_DEEP=new THREE.Color(0xd96f78),BONE=new THREE.Color(0xf1e6cf);
 function jaw(u,v,out,col){
   const x=L(-HALF,HALF,u);const e=Math.pow(Math.sin(Math.PI*u),0.22);
@@ -701,7 +776,7 @@ function buildComposer(){
   if(isMobile())return;
   composer=new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene,camera));
-  bloom=new UnrealBloomPass(new THREE.Vector2(canvas.clientWidth||1,canvas.clientHeight||1),.22,.4,1.0);
+  bloom=new UnrealBloomPass(new THREE.Vector2((canvas.clientWidth||2)/2,(canvas.clientHeight||2)/2),.22,.4,1.0);
   composer.addPass(bloom);composer.addPass(new OutputPass());
 }
 let wasMobile=isMobile();
@@ -721,7 +796,7 @@ const target=new THREE.Vector3();
 let cur=0,last=performance.now();
 function frame(now){
   const dt=Math.min((now-last)/1000,0.1);last=now;const t=now/1000;
-  cur+=(window.__implantP-cur)*(1-Math.exp(-dt*7));const P=cur;const mob=isMobile();
+  cur+=(window.__implantP-cur)*(1-Math.exp(-dt*11));const P=cur;const mob=isMobile();
   const a=ss(P,0,0.28),b=ss(P,0.30,0.62),c=ss(P,0.62,0.95);
   const s1=ss(P,0,0.22),s2=ss(P,0.30,0.62),s3a=ss(P,0.64,0.78),s3b=ss(P,0.76,0.95);
   /* câmera: plano aberto → aproxima no implante → recua e orbita para o lado oposto */
@@ -731,7 +806,7 @@ function frame(now){
   let ty=L(-0.6,-0.6,a);ty=L(ty,-0.15,b);ty=L(ty,-0.5,c);
   if(mob)r*=1.35;
   th+=0.05*Math.sin(t*0.25)+mx*0.22;h+=0.08*Math.sin(t*0.4)+my*0.5;
-  const k=1-Math.exp(-dt*5);
+  const k=1-Math.exp(-dt*8);
   cam.r+=(r-cam.r)*k;cam.th+=(th-cam.th)*k;cam.h+=(h-cam.h)*k;cam.ty+=(ty-cam.ty)*k;
   camera.position.set(cam.r*Math.sin(cam.th),cam.ty+cam.h,cam.r*Math.cos(cam.th));
   target.set(0,cam.ty,0);camera.lookAt(target);
